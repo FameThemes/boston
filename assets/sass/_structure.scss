@@ -1,0 +1,37 @@
+// main: style.scss
+/*--------------------------------------------------------------
+# Structure
+--------------------------------------------------------------*/
+.container {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 40px;
+    clear: both;
+    @include media-breakpoint-down(md) {
+        padding: 0 20px;
+    }
+}
+
+.full-width {
+    .content-area {
+        width: 100%;
+    }
+}
+
+.content-area {
+    float: none;
+    width: 100%;
+    @include media-breakpoint-up(md) {
+        width: percentage( 760px / 1080px );
+        float: left;
+    }
+}
+
+.sidebar {
+    float: none;
+    width: 100%;
+    @include media-breakpoint-up(md) {
+        width: percentage( 280px / 1080px );
+        float: right;
+    }
+}
