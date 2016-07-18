@@ -28,6 +28,8 @@ get_header(); ?>
 			<?php
 			endif;
 
+			echo '<div class="archive__layout1">';
+
 			/* Start the Loop */
 			while ( have_posts() ) : the_post();
 
@@ -39,6 +41,8 @@ get_header(); ?>
 				get_template_part( 'template-parts/content', get_post_format() );
 
 			endwhile;
+
+			echo '</div> <!-- .archive__default -->';
 
 			the_posts_navigation();
 

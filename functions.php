@@ -42,6 +42,11 @@ function boston_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 
+	/*
+	 * Custom image sizes
+	 */
+	add_image_size( 'boston-list-medium', 732, 360, true ); /* image size larger for mobile */
+
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => esc_html__( 'Primary', 'boston' ),
@@ -76,7 +81,7 @@ add_action( 'after_setup_theme', 'boston_setup' );
  * @global int $content_width
  */
 function boston_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'boston_content_width', 640 );
+	$GLOBALS['content_width'] = apply_filters( 'boston_content_width', 732 );
 }
 add_action( 'after_setup_theme', 'boston_content_width', 0 );
 
@@ -103,6 +108,9 @@ add_action( 'widgets_init', 'boston_widgets_init' );
  */
 function boston_scripts() {
 	wp_enqueue_style( 'boston-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/assets/fonts/genericons/genericons.css', array(), '3.4.1' );
+	wp_enqueue_style( 'boston-norwester-font', get_template_directory_uri() . '/assets/css/font-norwester.css', array() );
+	wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/assets/css/font-awesome.min.css', array(), '4.6.3' );
 
 	wp_enqueue_script( 'boston-themejs', get_template_directory_uri() . '/assets/js/theme.js', array(), '20151215', true );
 

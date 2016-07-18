@@ -1,1 +1,12 @@
 // main: style.scss
+
+/* Sidebar */
+.sidebar {
+    .widget {
+        @include rem('margin-bottom', 20px);
+    }
+    ul {
+        list-style: none;
+        padding: 0px;
+    }
+}

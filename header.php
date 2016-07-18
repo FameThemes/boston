@@ -25,8 +25,24 @@
 	<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'boston' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner">
-		<div class="container">
-			<div class="site-branding">
+		<div class="site-topbar">
+			<div class="container">
+				<nav id="site-navigation" class="main-navigation" role="navigation">
+					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'boston' ); ?></button>
+					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+				</nav><!-- #site-navigation -->
+				<div class="topbar-search">
+					<form action="/" method="get">
+					    <input type="text" name="s" id="search" value="<?php the_search_query(); ?>" placeholder="<?php esc_html_e('Search and hit enter...', 'boston') ?>" />
+						<span class="genericon genericon-search"></span>
+						<!-- <i class="fa fa-search" aria-hidden="true"></i> -->
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<div class="site-branding">
+			<div class="container">
 				<?php
 				if ( is_front_page() && is_home() ) : ?>
 					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
@@ -40,13 +56,9 @@
 					<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
 				<?php
 				endif; ?>
-			</div><!-- .site-branding -->
+			</div>
+		</div><!-- .site-branding -->
 
-			<nav id="site-navigation" class="main-navigation" role="navigation">
-				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'boston' ); ?></button>
-				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-			</nav><!-- #site-navigation -->
-		</div>
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">

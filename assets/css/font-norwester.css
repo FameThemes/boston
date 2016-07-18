@@ -1,0 +1,9 @@
+@font-face {
+	font-family: 'Norwester';
+	src: url('../fonts/Norwester-Regular.eot');
+	src: url('../fonts/Norwester-Regular.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/Norwester-Regular.woff') format('woff'),
+		url('../fonts/Norwester-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}

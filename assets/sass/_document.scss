@@ -1,0 +1,408 @@
+// main: style.scss
+
+*,
+*:before,
+*:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+	box-sizing: inherit;
+}
+
+html {
+	box-sizing: border-box;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    font-size: 16px;
+    @include media-breakpoint-down(md) {
+        font-size: 15px;
+    }
+    // @include media-breakpoint-down(sm) {
+    //     font-size: 14px;
+    // }
+}
+
+/*------------------------------
+# Typography
+------------------------------*/
+body,
+button,
+input,
+select,
+textarea {
+	color: $color__text;
+	font-family: $font__main;
+	@include rem('font-size', 15px);
+	line-height: 1.7;
+}
+/*------------------------------
+# Links
+------------------------------*/
+a {
+	color: inherit;;
+	text-decoration: none;
+
+	&:visited {
+		color: inherit;;
+	}
+	&:hover,
+	&:focus,
+	&:active {
+		color: inherit;
+		text-decoration: underline;
+	}
+	&:focus {
+		outline: thin dotted;
+		text-decoration: none;
+	}
+	&:hover,
+	&:active {
+		outline: 0;
+	}
+}
+
+/*------------------------------
+# Heading
+------------------------------*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    clear: both;
+    color: $color__heading;
+    font-family: $font__heading;
+    line-height: 1.2;
+	font-weight: 400;
+	margin-top: 0;
+	@include rem('margin-bottom', 20px);
+    a:hover {
+        color: #777777;
+        text-decoration: none;
+    }
+}
+
+h1 {
+	line-height: 1.2;
+	letter-spacing: -0.4px;
+	@include rem('font-size', 29px);
+	@include media-breakpoint-up(md) {
+		@include rem('font-size', 32px);
+	}
+}
+
+h2 {
+	line-height: 1.2;
+	letter-spacing: -0.3px;
+	@include rem('font-size', 25px);
+	@include media-breakpoint-up(md) {
+		@include rem('font-size', 28px);
+	}
+}
+
+h3 {
+	@include rem('font-size', 23px);
+}
+
+h4 {
+	@include rem('font-size', 20px);
+}
+
+h5 {
+	@include rem('font-size', 19px);
+}
+
+h6 {
+	@include rem('font-size', 18px);
+}
+
+/*------------------------------
+# Base
+------------------------------*/
+ul,ol,dl,p,details,address,.vcard,figure,pre,fieldset,table,dt,dd,hr {
+	@include rem('margin-bottom', 20px);
+	margin-top: 0;
+}
+p,ul,ol,dl,blockquote {
+	@extend .break;
+}
+
+
+/*------------------------------
+# Content
+------------------------------*/
+img {
+	height: auto;
+	max-width: 100%;
+	vertical-align: middle;
+}
+
+b,
+strong {
+	font-weight: bold;
+}
+
+blockquote {
+	clear: both;
+	@include rem('margin', 0 0 20px 0);
+	p {
+		font-style: italic;
+	}
+	cite {
+		font-style: normal;
+		@include rem('margin-bottom', 20px);
+		font-size: 13px;
+	}
+}
+
+dfn,
+cite,
+em,
+i {
+	font-style: italic;
+}
+
+hr {
+	border: 0;
+	border-top: 1px solid $color__border;
+	height: 1px;
+	@include rem('margin-bottom', 20px);
+}
+
+pre {
+	overflow: auto;
+	white-space: pre-wrap;
+	max-width: 100%;
+	line-height: 1.7;
+	@include rem('margin', 0 0 20px 0);
+	@include rem('padding', 20px);
+	background: #f8f9f9;
+	@extend .break;
+}
+
+details {
+	summary {
+		font-weight: bold;
+		@include rem('margin-bottom', 20px);
+	}
+	:focus {
+		outline: none;
+	}
+}
+
+abbr,
+acronym,
+dfn {
+	cursor: help;
+	font-size: .95em;
+	text-transform: uppercase;
+	border-bottom: 1px dotted $color__border;
+	letter-spacing: 1px;
+}
+
+mark {
+	background-color: #fff9c0;
+	text-decoration: none;
+}
+
+small {
+	font-size: 82%;
+}
+
+big {
+	font-size: 125%;
+}
+
+dt {
+	font-weight: bold;
+}
+
+dd {
+    @include rem('margin', 0 20px 20px);
+}
+
+/*------------------------------
+# Table
+------------------------------*/
+table {
+	width: 100%;
+	border: 1px solid $color__border;;
+	border-collapse: collapse;
+    border-spacing: 0;
+}
+
+table > thead > tr > th,
+table > tbody > tr > th,
+table > tfoot > tr > th,
+table > thead > tr > td,
+table > tbody > tr > td,
+table > tfoot > tr > td {
+    border: 1px solid $color__border;
+    line-height: 1.3;
+   	padding: 8px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+table > thead > tr > th, table > thead > tr > td {
+    border-bottom-width: 2px;
+}
+
+table th {
+	//font-size: 14px;
+}
+
+/*------------------------------
+# Form
+------------------------------*/
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	border: 1px solid;
+	border-radius: 0px;
+	background: #000000;
+	box-shadow: none;
+	color: $color__white;
+	font-size: 13px;
+	padding: 8px 20px;
+	@include border-radius(5px);
+	cursor: pointer;
+	text-shadow: none;
+	text-transform: uppercase;
+	letter-spacing: 1.4px;
+	&:hover {
+		background: #444444;
+	}
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+textarea {
+	color: $color__text;
+	border: 1px solid $color__border;
+	border-radius: 0px;
+	font-size: 13px;
+	margin: 0 0 10px;
+	&:focus {
+		outline: none;
+		border: 1px solid $color__border;
+	}
+	padding: 6px 12px;
+}
+textarea {
+	width: 100%;
+}
+
+/*------------------------------
+# Accessibility
+------------------------------*/
+/* Text meant only for screen readers */
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+
+	&:hover,
+	&:active,
+	&:focus {
+		background-color: $color__border;
+		border-radius: 3px;
+		box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+		clip: auto !important;
+		color: $color__text;
+		display: block;
+		@include font-size(0.875);
+		font-weight: bold;
+		height: auto;
+		left: 5px;
+		line-height: normal;
+		padding: 15px 23px 14px;
+		text-decoration: none;
+		top: 5px;
+		width: auto;
+		z-index: 100000; /* Above WP toolbar. */
+	}
+}
+
+/*------------------------------
+# Alignments
+------------------------------*/
+.alignleft {
+	display: inline;
+	float: left;
+	@include rem('margin-right', 25px);
+}
+
+.alignright {
+	display: inline;
+	float: right;
+	@include rem('margin-left', 25px);
+}
+
+.aligncenter {
+	@include center-block;
+}
+
+/*------------------------------
+# Clearings
+------------------------------*/
+.clear:before,
+.clear:after,
+.entry-content:before,
+.entry-content:after,
+.comment-content:before,
+.comment-content:after,
+.site-header:before,
+.site-header:after,
+.site-content:before,
+.site-content:after,
+.site-footer:before,
+.site-footer:after,
+.container::before,
+.container:after,
+.nav-links::before,
+.nav-links::after {
+	content: "";
+	display: table;
+	table-layout: fixed;
+}
+
+.clear:after,
+.entry-content:after,
+.comment-content:after,
+.site-header:after,
+.site-content:after,
+.site-footer:after,
+.post-list:after,
+.container:after,
+.nav-links:after {
+	clear: both;
+}
+
+/*------------------------------
+# Infinite Scroll
+------------------------------*/
+/* Globally hidden elements when Infinite Scroll is supported and in use. */
+.infinite-scroll .posts-navigation, /* Older / Newer Posts Navigation (always hidden) */
+.infinite-scroll.neverending .site-footer { /* Theme Footer (when set to scrolling) */
+	display: none;
+}
+
+/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
+.infinity-end.neverending .site-footer {
+	display: block;
+}
+
+/*------------------------------
+# Helper.
+------------------------------*/
+.hide {
+	display: none;
+}
+
+.clearleft {
+	clear: left;
+}
