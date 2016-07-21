@@ -23,10 +23,12 @@
 .content-area {
     float: none;
     width: 100%;
+    @include rem('margin-bottom', 60px);
     @include media-breakpoint-up(md) {
-        width: percentage( 760px / 1080px );
+        width: percentage( 720px / 1040px );
         float: left;
-        max-width: 732px;
+        max-width: 720px;
+        margin-bottom: 0px;
     }
 }
 
@@ -34,7 +36,7 @@
     float: none;
     width: 100%;
     @include media-breakpoint-up(md) {
-        width: percentage( 280px / 1080px );
+        width: percentage( 270px / 1040px );
         float: right;
     }
 }
@@ -42,8 +44,8 @@
 /* Site Topbar */
 .site-topbar {
     height: 52px;
-    box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.02);
-    border-bottom: 1px solid #f5f5f5;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.05);
+    //border-bottom: 1px solid #f5f5f5;
     #site-navigation {
         float: left;
     }
@@ -78,19 +80,21 @@
         margin-bottom: 0px;
         @include rem('font-size', 60px);
         @include media-breakpoint-down(md) {
-            @include rem('font-size', 40px);
+            @include rem('font-size', 48px);
         }
         @include media-breakpoint-down(sm) {
             @include rem('font-size', 35px);
         }
         text-transform: uppercase;
-        font-weight: 900;
+        font-weight: 100;
         line-height: 1;
         color: #000000;
         font-family: "Norwester",'Open Sans', Georgia, serif;
+        letter-spacing: 1.5px;
         a {
             &:hover{
                 text-decoration: none;
+                color: #000000;
             }
         }
     }
@@ -99,5 +103,56 @@
         letter-spacing: 1.5px;
         margin: 10px 0 0 0px;
         text-transform: uppercase;
+    }
+}
+
+/* Site Content */
+.site-content {
+    @include rem('padding-top', 50px);
+    border-top: 1px solid $color__border;
+}
+
+.home.blog .site-content {
+    border-top: none;
+    padding-top: 0;
+}
+
+.archive-header {
+    @include rem('padding', 25px 0px);
+    //background: $color__border;
+    border-top: 1px solid $color__border;
+    h1 {
+        margin: 0px;
+        @include rem('font-size', 17px);
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        font-family: $font__main;
+        font-weight: normal;
+    }
+    .taxonomy-description {
+        margin-bottom: 0px;
+        margin-top: 8px;
+        p {
+            margin-bottom: 0px;
+            color: $color__meta;
+        }
+    }
+}
+
+/* Site Footer */
+.site-footer {
+    @include rem('padding', 30px 0px);
+    @include rem('margin-top', 40px);
+    border-top: 1px solid $color__border;
+    font-size: 13px;
+    color: $color__meta;
+    p {
+        margin-bottom: 0px;
+    }
+    .site-info {
+        float: left;
+    }
+    .theme-info {
+        float: right;
     }
 }

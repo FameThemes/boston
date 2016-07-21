@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying posts.
+ * Template part for displaying single post.
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
@@ -10,6 +10,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
 	<header class="entry-header">
 		<?php
 			if ( is_single() ) {
@@ -22,23 +23,20 @@
 		<div class="entry-meta">
 			<?php boston_posted_on(); ?>
 		</div><!-- .entry-meta -->
+
+        <?php if ( has_post_thumbnail( ) ) { ?>
+    	<aside class="entry-thumbnail">
+    		<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail( 'boston-list-medium' ); ?></a>
+    	</aside>
+    	<?php } ?>
+        
 		<?php
 		endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php if ( has_post_thumbnail( ) ) { ?>
-	<aside class="entry-thumbnail">
-		<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail( 'boston-list-medium' ); ?></a>
-	</aside>
-	<?php } ?>
-
-	<div class="entry-summary">
-		<?php the_excerpt(); ?>
-	</div><!-- .entry-summary -->
-
-	<div class="entry-more">
-		<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php esc_html_e( 'Continue Reading', 'boston' ); ?></a>
-	</div>
+	<div class="entry-content">
+		<?php the_content(); ?>
+	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
 		<?php //boston_entry_footer(); ?>

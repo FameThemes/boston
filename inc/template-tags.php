@@ -31,7 +31,15 @@ function boston_posted_on() {
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
 
-	echo $byline.$posted_on;
+
+	$category = get_the_category();
+	$cate = '';
+	if ( $category[0] ) {
+		$cate = '<span class="entry-cate"><a class="entry-category" href="'.get_category_link($category[0]->term_id ).'">'.$category[0]->cat_name.'</a></span>';
+	}
+
+
+	echo $cate.$byline.$posted_on;
 	if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 		echo '<span class="comments-link">';
 		echo '<i class="fa fa-comments-o"></i>';
@@ -123,3 +131,20 @@ function boston_category_transient_flusher() {
 }
 add_action( 'edit_category', 'boston_category_transient_flusher' );
 add_action( 'save_post',     'boston_category_transient_flusher' );
+
+/**
+ * Output the theme info to 'boston_theme_info' hook.
+ */
+if ( ! function_exists( 'boston_footer_credit' ) ) {
+    /**
+     * Add Copyright and Credit text to footer
+     * @since 1.1.3
+     */
+    function boston_footer_credit()
+    {
+        ?>
+        <?php printf( esc_html__( 'Boston Theme by %1$s', 'boston' ), '<a href="https://www.famethemes.com/">FameThemes</a>' ); ?>
+        <?php
+    }
+}
+add_action( 'boston_theme_info', 'boston_footer_credit' );

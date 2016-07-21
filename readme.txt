@@ -1,7 +1,8 @@
 === Boston ===
 
 Contributors: famethemes
-Tags: one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, featured-images, sticky-post, threaded-comments, translation-ready, footer-widgets, blog, news, photography
+Tags: one-column, two-columns, right-sidebar, custom-background, custom-menu, featured-images, sticky-post, translation-ready, threaded-comments, theme-options, blog, news
+
 
 Requires at least: 4.5
 Tested up to: 4.5
@@ -41,6 +42,5 @@ Boston includes support for Tiled Galleries in Jetpack.
 * Google Fonts https://www.google.com/fonts/specimen/Open+Sans, [OFL](scripts.sil.org/OFL)
 * Google Fonts https://www.google.com/fonts/specimen/Lato, [OFL](scripts.sil.org/OFL)
 * Norwester Font jamiewilson.io, (C) October 14, 2013 Jamie Wilson, [SIL Open Font License v1.10](https://www.fontsquirrel.com/license/norwester)
-* FitVids https://github.com/davatron5000/FitVids.js/blob/master/jquery.fitvids.js, (C) 2013 Chris Coyie, [WTFPL](http://sam.zoy.org/wtfpl/)
 * Genericons http://www.genericons.com, (C) 2013-2015 Automattic.com, GNU GPL, Version 2
-* Image use in screenshot: https://www.pexels.com/photo/chrome-bmw-grille-113176/. [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
+* Image use in screenshot: https://www.pexels.com/photo/woman-person-model-beauty-7025/. [CC0](https://creativecommons.org/publicdomain/zero/1.0/)

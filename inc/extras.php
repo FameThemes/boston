@@ -27,3 +27,21 @@ function boston_body_classes( $classes ) {
 	return $classes;
 }
 add_filter( 'body_class', 'boston_body_classes' );
+
+/**
+ * Wrap widget category post count in span
+ */
+add_filter('wp_list_categories', 'boston_cat_count_span');
+function boston_cat_count_span( $links ) {
+	$links = str_replace('</a> (', '</a> <span>(', $links);
+	$links = str_replace(')', ')</span>', $links);
+	return $links;
+}
+
+/**
+ * Custom excerpt more
+ */
+function boston_custom_excerpt_more( $more ) {
+	return '...';
+}
+add_filter( 'excerpt_more', 'boston_custom_excerpt_more' );

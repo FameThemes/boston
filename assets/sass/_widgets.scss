@@ -1,12 +1,97 @@
 // main: style.scss
 
+/* Widget Title */
+.widget-title {
+    background: $color__border;
+    color: #666666;
+    text-align: center;
+    padding: 8px 20px 7px;
+    display: block;
+    margin-bottom: 20px;
+    @include rem('font-size',11px);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+}
+
 /* Sidebar */
 .sidebar {
-    .widget {
-        @include rem('margin-bottom', 20px);
+    select {
+        max-width: 100%;
     }
+    .widget_text img {
+        @include rem('margin-bottom', 18px);
+    }
+}
+
+.widget {
+    @include rem('margin-bottom', 30px);
     ul {
         list-style: none;
         padding: 0px;
+        li {
+            display: block;
+            margin-bottom: 5px;
+            padding-bottom: 5px;
+            border-bottom: 1px dotted $color__border;
+        }
+        ul {
+            margin-bottom: 0px;
+            li {
+                border-bottom: none;
+                margin-bottom: 0;
+                padding-bottom: 0;
+                margin-top: 5px;
+                padding-top: 5px;
+                border-top: 1px dotted $color__border;
+                a {
+                    padding-left: 15px;
+                    position: relative;
+                    &:after {
+                        content: "";
+                        width: 6px;
+                        height: 6px;
+                        border-left: 1px solid $color__border;
+                        border-bottom: 1px solid $color__border;
+                        display: block;
+                        position: absolute;
+                        left: 0px;
+                        top: 6px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.widget_categories {
+    li {
+        a {
+            color: $color__primary;
+        }
+        span {
+            float: right;
+            color: #888888;
+            font-size: 12px;
+        }
+    }
+}
+
+.widget_recent_comments {
+    .comment-author-link {
+        font-weight: 600;
+    }
+}
+
+/* About me */
+.about-me {
+    text-align: center;
+    span {
+        @include rem('font-size', 14px);
+        text-transform: uppercase;
+        @include rem('margin-bottom', 18px);
+        letter-spacing: 2px;
+        font-weight: 600;
+        display: inline-block;
     }
 }

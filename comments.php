@@ -25,61 +25,49 @@ if ( post_password_required() ) {
 	<?php
 	// You can start editing here -- including this comment!
 	if ( have_comments() ) : ?>
-		<h2 class="comments-title">
+		<div class="comments-title">
+			<span class="comment_number_count">
 			<?php
 				printf( // WPCS: XSS OK.
-					esc_html( _nx( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'boston' ) ),
-					number_format_i18n( get_comments_number() ),
-					'<span>' . get_the_title() . '</span>'
+					esc_html( _nx( 'One comment', '%1$s comments', get_comments_number(), 'comments title', 'boston' ) ),
+					number_format_i18n( get_comments_number() )
 				);
 			?>
-		</h2>
+			</span>
+			<?php if ( comments_open() ) { ?>
+			<span class="add_yours">
+				<a href="#respond"><?php esc_html_e( 'Add yours', 'boston' ); ?></a>
+			</span>
+			<?php } ?>
+		</div>
 
-		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
-		<nav id="comment-nav-above" class="navigation comment-navigation" role="navigation">
-			<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'boston' ); ?></h2>
-			<div class="nav-links">
-
-				<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'boston' ) ); ?></div>
-				<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'boston' ) ); ?></div>
-
-			</div><!-- .nav-links -->
-		</nav><!-- #comment-nav-above -->
-		<?php endif; // Check for comment navigation. ?>
+		<?php the_comments_navigation(); ?>
 
 		<ol class="comment-list">
 			<?php
 				wp_list_comments( array(
 					'style'      => 'ol',
 					'short_ping' => true,
+					'avatar_size' => 42,
 				) );
 			?>
 		</ol><!-- .comment-list -->
 
-		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
-		<nav id="comment-nav-below" class="navigation comment-navigation" role="navigation">
-			<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'boston' ); ?></h2>
-			<div class="nav-links">
+		<?php the_comments_navigation(); ?>
 
-				<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'boston' ) ); ?></div>
-				<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'boston' ) ); ?></div>
-
-			</div><!-- .nav-links -->
-		</nav><!-- #comment-nav-below -->
 		<?php
-		endif; // Check for comment navigation.
-
 	endif; // Check for have_comments().
 
 
 	// If comments are closed and there are comments, let's leave a little note, shall we?
 	if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
-
 		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'boston' ); ?></p>
 	<?php
 	endif;
-
-	comment_form();
+	comment_form( array(
+		'title_reply_before' => '<h4 id="reply-title" class="comment-reply-title">',
+		'title_reply_after'  => '</h4>',
+	) );
 	?>
 
 </div><!-- #comments -->

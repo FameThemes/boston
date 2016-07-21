@@ -1,0 +1,38 @@
+// main: style.scss
+
+/* Jetpack */
+.entry-content {
+    div.sharedaddy h3.sd-title, #jp-relatedposts h3.jp-relatedposts-headline {
+        font-family: $font__main;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 2px;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+    }
+    .jp-relatedposts-post-img {
+        margin-bottom: 10px;
+    }
+    div.sharedaddy h3.sd-title::before,
+    #jp-relatedposts h3.jp-relatedposts-headline:before {
+        border-top-color: $color__border;
+    }
+}
+.content-area {
+    #infinite-handle span {
+        color: #FFFFFF;
+        background: #000000;
+        @include rem('padding', 8px 24px 9px);
+        @include border-radius(3px);
+        button {
+            font-size: 12px;
+    		text-transform: uppercase;
+            &:hover {
+                font-size: 12px;
+            }
+        }
+        &:hover {
+            background: #444444;
+        }
+    }
+}

@@ -81,7 +81,7 @@ add_action( 'after_setup_theme', 'boston_setup' );
  * @global int $content_width
  */
 function boston_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'boston_content_width', 732 );
+	$GLOBALS['content_width'] = apply_filters( 'boston_content_width', 720 );
 }
 add_action( 'after_setup_theme', 'boston_content_width', 0 );
 
@@ -97,8 +97,8 @@ function boston_widgets_init() {
 		'description'   => esc_html__( 'Add widgets here.', 'boston' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<h4 class="widget-title">',
-		'after_title'   => '</h4>',
+		'before_title'  => '<div class="widget-title">',
+		'after_title'   => '</div>',
 	) );
 }
 add_action( 'widgets_init', 'boston_widgets_init' );

@@ -16,10 +16,13 @@
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="container">
 			<div class="site-info">
-				<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'boston' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'boston' ), 'WordPress' ); ?></a>
-				<span class="sep"> | </span>
-				<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'boston' ), 'boston', '<a href="https://wpstash.com" rel="designer">WPStash</a>' ); ?>
+				<p>
+					<?php printf( esc_html__( 'Copyright &copy; %1$s %2$s. All Rights Reserved.', 'boston' ), date('Y'), get_bloginfo( 'name' ) ); ?>
+				</p>
 			</div><!-- .site-info -->
+			<div class="theme-info">
+				<?php do_action('boston_theme_info'); ?>
+			</div>
 		</div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->

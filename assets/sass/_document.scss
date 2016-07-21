@@ -28,7 +28,7 @@ select,
 textarea {
 	color: $color__text;
 	font-family: $font__main;
-	@include rem('font-size', 15px);
+	@include rem('font-size', 14px);
 	line-height: 1.7;
 }
 /*------------------------------
@@ -74,7 +74,7 @@ h6 {
 	margin-top: 0;
 	@include rem('margin-bottom', 20px);
     a:hover {
-        color: #777777;
+        color: $color__meta;
         text-decoration: none;
     }
 }
@@ -256,14 +256,13 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	border: 1px solid;
-	border-radius: 0px;
+	border: none;
 	background: #000000;
 	box-shadow: none;
 	color: $color__white;
-	font-size: 13px;
-	padding: 8px 20px;
-	@include border-radius(5px);
+	font-size: 12px;
+	padding: 8px 24px;
+	@include border-radius(3px);
 	cursor: pointer;
 	text-shadow: none;
 	text-transform: uppercase;
@@ -286,9 +285,9 @@ textarea {
 	margin: 0 0 10px;
 	&:focus {
 		outline: none;
-		border: 1px solid $color__border;
+		border: 1px solid #cccccc;
 	}
-	padding: 6px 12px;
+	padding: 7px 12px;
 }
 textarea {
 	width: 100%;
@@ -298,7 +297,7 @@ textarea {
 # Accessibility
 ------------------------------*/
 /* Text meant only for screen readers */
-.screen-reader-text {
+.says, .screen-reader-text {
 	clip: rect(1px, 1px, 1px, 1px);
 	position: absolute !important;
 	height: 1px;

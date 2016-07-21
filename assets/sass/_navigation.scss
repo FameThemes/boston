@@ -126,11 +126,26 @@
 			ul {
 				margin: 0px;
 				a {
-					padding-left: 20px;
+					padding-left: 15px;
+					position: relative;
+					&:after {
+                        content: "";
+                        width: 6px;
+                        height: 6px;
+                        border-left: 1px solid #e5e5e5;
+                        border-bottom: 1px solid #e5e5e5;
+                        display: block;
+                        position: absolute;
+                        left: 0px;
+                        top: 12px;
+                    }
 				}
 				ul {
 					a {
-						padding-left: 40px;
+						padding-left: 30px;
+						&:after {
+							left: 15px;
+						}
 					}
 				}
 			}
@@ -208,5 +223,40 @@
 		float: right;
 		text-align: right;
 		width: 50%;
+	}
+}
+
+.posts-navigation {
+	a {
+		letter-spacing: 1.3px;
+		font-size: 11px;
+		text-transform: uppercase;
+		@include border-radius(2px);
+		background: #000000;
+		color: #fff;
+		@include rem('padding', 8px 24px);
+		display: inline-block;
+		&:hover {
+			background: #444444;
+			text-decoration: none;
+		}
+	}
+	.nav-previous a:before, .nav-next a:after {
+		bottom: -1px;
+	    content: '\f430';
+	    font-family: "Genericons";
+	    font-style: normal;
+	    font-variant: normal;
+	    font-weight: normal;
+	    margin-right: 3px;
+	    position: relative;
+	    text-decoration: inherit;
+	    text-transform: none;
+	}
+	.nav-next a:after {
+		content: '\f429';
+		margin-right: 0;
+		margin-left: 3px;
+		right: 0;
 	}
 }

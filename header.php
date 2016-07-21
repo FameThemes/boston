@@ -61,5 +61,16 @@
 
 	</header><!-- #masthead -->
 
+	<?php if ( is_archive() ) { ?>
+		<header class="page-header archive-header">
+			<div class="container">
+				<?php
+					the_archive_title( '<h1 class="page-title">', '</h1>' );
+					the_archive_description( '<div class="taxonomy-description">', '</div>' );
+				?>
+			</div>
+		</header><!-- .page-header -->
+	<?php } ?>
+
 	<div id="content" class="site-content">
 		<div class="container">
