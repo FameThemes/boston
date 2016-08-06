@@ -85,11 +85,11 @@
 
 /* About me */
 .about-me {
-    text-align: center;
+    //text-align: center;
     span {
         @include rem('font-size', 14px);
         text-transform: uppercase;
-        @include rem('margin-bottom', 18px);
+        @include rem('margin-bottom', 8px);
         letter-spacing: 2px;
         font-weight: 600;
         display: inline-block;

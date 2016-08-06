@@ -58,8 +58,8 @@ function boston_setup() {
 	/*
 	 * Custom image sizes
 	 */
-	add_image_size( 'boston-list-medium', 732, 360, true ); /* image size larger for mobile */
-	add_image_size( 'boston-featured-medium', 500, 300, true ); /* image size larger for mobile */
+	add_image_size( 'boston-list-medium', 732, 380, true ); /* image size larger for mobile */
+	add_image_size( 'boston-featured-medium', 500, 350, true ); /* image size larger for mobile */
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(

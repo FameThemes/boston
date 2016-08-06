@@ -16,7 +16,9 @@
 	// Let's loop through our posts ?>
 	<div class="featured_posts">
 		<?php foreach ( $featured_posts as $post ) : setup_postdata( $post ); ?>
+            <?php if ( has_post_thumbnail( ) ) { ?>
 			<?php get_template_part( 'template-parts/content', 'featured' ); ?>
+            <?php } ?>
 		<?php endforeach; ?>
 	</div>
 	<?php wp_reset_postdata(); ?>

@@ -83,6 +83,13 @@ a.entry-category {
 	h1,h2,h3 {
 		letter-spacing: -0.5px;
 	}
+	a {
+		color: $color__primary;
+		text-decoration: underline;
+		&:hover {
+			color: $color__text;
+		}
+	}
 }
 
 .sticky {

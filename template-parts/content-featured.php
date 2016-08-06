@@ -16,6 +16,12 @@
 	</aside>
 	<?php } ?>
 	<header class="entry-header">
+		<?php
+		$category = get_the_category();
+		$cate = '';
+		if ( $category[0] ) {
+			echo $cate = '<a class="featured-posts-cate" href="'.get_category_link($category[0]->term_id ).'">'.$category[0]->cat_name.'</a>';
+		} ?>
 		<?php the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' ); ?>
 	</header><!-- .entry-header -->
 

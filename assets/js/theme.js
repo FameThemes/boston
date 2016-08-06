@@ -148,6 +148,10 @@
 // Call owl carousel for featured content.
 jQuery( document ).ready( function( $ ){
 	jQuery('.featured_posts').owlCarousel( {
+		autoPlay: 5000,
 		items : 3,
+		itemsDesktop: 2,
+		itemsDesktopSmall: [979,2],
+		paginationNumbers: false,
 	} )
 } );

@@ -43,5 +43,6 @@ Boston includes support for Tiled Galleries in Jetpack.
 * Google Fonts https://www.google.com/fonts/specimen/Lato, [OFL](scripts.sil.org/OFL)
 * Norwester Font jamiewilson.io, (C) October 14, 2013 Jamie Wilson, [SIL Open Font License v1.10](https://www.fontsquirrel.com/license/norwester)
 * Genericons http://www.genericons.com, (C) 2013-2015 Automattic.com, GNU GPL, Version 2
+* OwlCarousel http://www.owlgraphic.com/owlcarousel/, (C) 2013 Bartosz Wojciechowski, [MIT](http://opensource.org/licenses/MIT)
 * Image use in screenshot: https://www.pexels.com/photo/woman-person-model-beauty-7025/. [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
 * Image use in screenshot: https://www.pexels.com/photo/city-road-street-buildings-1440/. [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
