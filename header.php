@@ -44,6 +44,10 @@
 		<div class="site-branding">
 			<div class="container">
 				<?php
+				if ( function_exists( 'the_custom_logo' ) ) {
+					the_custom_logo();
+				}
+
 				if ( is_front_page() && is_home() ) : ?>
 					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 				<?php else : ?>
@@ -71,6 +75,12 @@
 			</div>
 		</header><!-- .page-header -->
 	<?php } ?>
+
+	<?php if ( is_home() || is_front_page() ) : ?>
+		<div id="featured-content">
+			<?php get_template_part( 'template-parts/loop', 'featured' ); ?>
+		</div>
+	<?php endif; ?>
 
 	<div id="content" class="site-content">
 		<div class="container">

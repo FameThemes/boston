@@ -30,6 +30,7 @@ textarea {
 	font-family: $font__main;
 	@include rem('font-size', 14px);
 	line-height: 1.7;
+	background: #FFFFFF;
 }
 /*------------------------------
 # Links

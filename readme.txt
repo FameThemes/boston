@@ -32,7 +32,7 @@ Boston includes support for Tiled Galleries in Jetpack.
 
 == Changelog ==
 
-= 1.0.1 =
+= 1.0.2 =
 * Initial release
 
 == Credits ==

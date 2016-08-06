@@ -1,10 +1,10 @@
 /*
 Theme Name: Boston
 Theme URI: https://www.famethemes.com/themes/boston
-Author: WPStash
-Author URI: https://www.fametheems.com
+Author: FameThemes
+Author URI: https://www.famethemes.com
 Description: A beautiful blog theme for WordPress
-Version: 1.0.1
+Version: 1.0.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: boston
@@ -300,6 +300,7 @@ textarea {
 	font-size: 14px;
 	font-size: 0.875rem;
 	line-height: 1.7;
+	background: #FFFFFF;
 }
 
 /*------------------------------
@@ -773,6 +774,8 @@ textarea {
 .site-topbar {
 	height: 52px;
 	box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.05);
+	position: relative;
+	z-index: 20;
 }
 
 .site-topbar #site-navigation {
@@ -811,6 +814,14 @@ textarea {
 	padding: 50px 0px;
 	padding:  3.125rem 0rem;
 	text-align: center;
+	position: relative;
+	z-index: 1;
+}
+
+.site-branding .custom-logo-link {
+	margin-bottom: 30px;
+	margin-bottom: 1.875rem;
+	display: inline-block;
 }
 
 .site-branding .site-title {
@@ -820,7 +831,7 @@ textarea {
 	text-transform: uppercase;
 	font-weight: 100;
 	line-height: 1;
-	color: #000000;
+	color: #000;
 	font-family: "Norwester",'Open Sans', Georgia, serif;
 	letter-spacing: 1.5px;
 }
@@ -841,7 +852,7 @@ textarea {
 
 .site-branding .site-title a:hover {
 	text-decoration: none;
-	color: #000000;
+	color: inherit;
 }
 
 .site-branding .site-description {
@@ -861,7 +872,6 @@ textarea {
 
 .home.blog .site-content {
 	border-top: none;
-	padding-top: 0;
 }
 
 .archive-header {
@@ -1698,4 +1708,79 @@ object {
 
 .content-area #infinite-handle span:hover {
 	background: #444444;
+}
+
+/*
+ * 	Core Owl Carousel CSS File
+ */
+/* clearfix */
+.owl-carousel .owl-wrapper:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+
+/* display none until init */
+.owl-carousel {
+	display: none;
+	position: relative;
+	width: 100%;
+	-ms-touch-action: pan-y;
+}
+
+.owl-carousel .owl-wrapper {
+	display: none;
+	position: relative;
+	-webkit-transform: translate3d(0px, 0px, 0px);
+}
+
+.owl-carousel .owl-wrapper-outer {
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+}
+
+.owl-carousel .owl-wrapper-outer.autoHeight {
+	-webkit-transition: height 500ms ease-in-out;
+	-moz-transition: height 500ms ease-in-out;
+	-ms-transition: height 500ms ease-in-out;
+	-o-transition: height 500ms ease-in-out;
+	transition: height 500ms ease-in-out;
+}
+
+.owl-carousel .owl-item {
+	float: left;
+}
+
+.owl-controls .owl-page,
+.owl-controls .owl-buttons div {
+	cursor: pointer;
+}
+
+.owl-controls {
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+}
+
+/* mouse grab icon */
+.grabbing {
+	cursor: url(grabbing.png) 8 8, move;
+}
+
+/* fix */
+.owl-carousel .owl-wrapper,
+.owl-carousel .owl-item {
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-ms-backface-visibility: hidden;
+	-webkit-transform: translate3d(0, 0, 0);
+	-moz-transform: translate3d(0, 0, 0);
+	-ms-transform: translate3d(0, 0, 0);
 }

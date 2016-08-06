@@ -36,6 +36,19 @@ function boston_setup() {
 	add_theme_support( 'title-tag' );
 
 	/*
+	 * Enable support for custom logo.
+	 *
+	 * @link https://developer.wordpress.org/reference/functions/add_theme_support/#custom-logo
+	 */
+	add_theme_support( 'custom-logo', array(
+		'height'      => 60,
+		'width'       => 240,
+		'flex-width'  => true,
+		'flex-height' => true,
+		'header-text' => array( 'site-title', 'site-description' ),
+	) );
+
+	/*
 	 * Enable support for Post Thumbnails on posts and pages.
 	 *
 	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
@@ -46,6 +59,7 @@ function boston_setup() {
 	 * Custom image sizes
 	 */
 	add_image_size( 'boston-list-medium', 732, 360, true ); /* image size larger for mobile */
+	add_image_size( 'boston-featured-medium', 500, 300, true ); /* image size larger for mobile */
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -69,6 +83,7 @@ function boston_setup() {
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
+
 }
 endif;
 add_action( 'after_setup_theme', 'boston_setup' );
@@ -110,20 +125,16 @@ function boston_scripts() {
 	wp_enqueue_style( 'boston-style', get_stylesheet_uri() );
 	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/assets/fonts/genericons/genericons.css', array(), '3.4.1' );
 	wp_enqueue_style( 'boston-norwester-font', get_template_directory_uri() . '/assets/css/font-norwester.css', array() );
-	wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/assets/css/font-awesome.min.css', array(), '4.6.3' );
 
-	wp_enqueue_script( 'boston-themejs', get_template_directory_uri() . '/assets/js/theme.js', array(), '20151215', true );
+	// We don't need to prefix owl-carousel to avoid duplicate load just like genericons.
+	wp_enqueue_script( 'owl-carousel', get_template_directory_uri() . '/assets/js/theme.js', array(), '20151215', true );
+	wp_enqueue_script( 'boston-themejs', get_template_directory_uri() . '/assets/js/owl.carousel.min.js', array(), '1.3.3', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'boston_scripts' );
-
-/**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.
@@ -144,3 +155,8 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/**
+ * Load plugin enhancement file to display admin notices.
+ */
+require get_template_directory() . '/inc/plugin-enhancements.php';

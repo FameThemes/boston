@@ -11,6 +11,9 @@
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
 function boston_customize_register( $wp_customize ) {
+
+	// Custom WP default control & settings.
+	$wp_customize->get_section( 'title_tagline' )->title = esc_html__('Site Title, Tagline & Logo', 'boston');
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';

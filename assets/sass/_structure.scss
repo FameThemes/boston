@@ -46,6 +46,8 @@
     height: 52px;
     box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.05);
     //border-bottom: 1px solid #f5f5f5;
+    position: relative;
+    z-index: 20;
     #site-navigation {
         float: left;
     }
@@ -76,6 +78,12 @@
 .site-branding {
     @include rem('padding', 50px 0px);
     text-align: center;
+    position: relative;
+    z-index: 1;
+    .custom-logo-link {
+        @include rem('margin-bottom', 30px);
+        display: inline-block;
+    }
     .site-title {
         margin-bottom: 0px;
         @include rem('font-size', 60px);
@@ -88,13 +96,13 @@
         text-transform: uppercase;
         font-weight: 100;
         line-height: 1;
-        color: #000000;
+        color: #000;
         font-family: "Norwester",'Open Sans', Georgia, serif;
         letter-spacing: 1.5px;
         a {
             &:hover{
                 text-decoration: none;
-                color: #000000;
+                color: inherit;
             }
         }
     }
@@ -114,7 +122,7 @@
 
 .home.blog .site-content {
     border-top: none;
-    padding-top: 0;
+    //padding-top: 0;
 }
 
 .archive-header {

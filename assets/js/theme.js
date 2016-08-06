@@ -144,3 +144,10 @@
 		}
 	}( container ) );
 } )();
+
+// Call owl carousel for featured content.
+jQuery( document ).ready( function( $ ){
+	jQuery('.featured_posts').owlCarousel( {
+		items : 3,
+	} )
+} );
