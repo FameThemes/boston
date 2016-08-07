@@ -46,3 +46,4 @@ Boston includes support for Tiled Galleries in Jetpack.
 * OwlCarousel http://www.owlgraphic.com/owlcarousel/, (C) 2013 Bartosz Wojciechowski, [MIT](http://opensource.org/licenses/MIT)
 * Image use in screenshot: https://www.pexels.com/photo/woman-person-model-beauty-7025/. [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
 * Image use in screenshot: https://www.pexels.com/photo/city-road-street-buildings-1440/. [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
+* Image use in screenshot: https://www.pexels.com/photo/white-bed-next-to-white-accent-table-90319/. [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
