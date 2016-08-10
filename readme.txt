@@ -30,11 +30,6 @@ A beautiful blog theme for WordPress
 Boston includes support for Infinite Scroll in Jetpack.
 Boston includes support for Tiled Galleries in Jetpack.
 
-== Changelog ==
-
-= 1.0.2 =
-* Initial release
-
 == Credits ==
 
 * Based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
@@ -44,6 +39,12 @@ Boston includes support for Tiled Galleries in Jetpack.
 * Norwester Font jamiewilson.io, (C) October 14, 2013 Jamie Wilson, [SIL Open Font License v1.10](https://www.fontsquirrel.com/license/norwester)
 * Genericons http://www.genericons.com, (C) 2013-2015 Automattic.com, GNU GPL, Version 2
 * OwlCarousel http://www.owlgraphic.com/owlcarousel/, (C) 2013 Bartosz Wojciechowski, [MIT](http://opensource.org/licenses/MIT)
-* Image use in screenshot: https://www.pexels.com/photo/woman-person-model-beauty-7025/. [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
-* Image use in screenshot: https://www.pexels.com/photo/city-road-street-buildings-1440/. [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
+* Image use in screenshot: https://www.pexels.com/photo/woman-girl-sitting-plants-94806/. [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
+* Image use in screenshot: https://www.pexels.com/photo/animal-pet-cute-baby-50577/. [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
+* Image use in screenshot: https://www.pexels.com/photo/man-suit-flowers-petals-94289/. [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
 * Image use in screenshot: https://www.pexels.com/photo/white-bed-next-to-white-accent-table-90319/. [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
+
+== Changelog ==
+
+= 1.0.3 =
+* Initial release
