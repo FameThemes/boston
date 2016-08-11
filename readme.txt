@@ -43,8 +43,9 @@ Boston includes support for Tiled Galleries in Jetpack.
 * Image use in screenshot: https://www.pexels.com/photo/animal-pet-cute-baby-50577/. [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
 * Image use in screenshot: https://www.pexels.com/photo/man-suit-flowers-petals-94289/. [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
 * Image use in screenshot: https://www.pexels.com/photo/white-bed-next-to-white-accent-table-90319/. [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
+* Image use in screenshot: https://www.pexels.com/photo/woman-person-model-beauty-7025/. [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
 
 == Changelog ==
 
-= 1.0.3 =
+= 1.0.4 =
 * Initial release

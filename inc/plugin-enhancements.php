@@ -233,7 +233,7 @@ class Boston_Theme_Plugin_Enhancements {
 	 */
 	function admin_notices() {
 		// Bail if the user has previously dismissed the notice (doesn't show the notice)
-		if ( get_user_meta( get_current_user_id(), 'textdomain_jetpack_admin_notice', true ) === 'dismissed' ) {
+		if ( get_user_meta( get_current_user_id(), 'boston_jetpack_admin_notice', true ) === 'dismissed' ) {
 			return;
 		}
 
@@ -255,7 +255,7 @@ class Boston_Theme_Plugin_Enhancements {
 				$notice .= sprintf(
 					esc_html__( ' Please activate %1$s. %2$s', 'boston' ),
 					esc_html( $plugin['name'] ),
-					( $activate_url ) ? '<a href="' . $activate_url . '">' . esc_html__( 'Activate', 'boston' ) . '</a>' : ''
+					( $activate_url ) ? '<a href="' . esc_url( $activate_url ) . '">' . esc_html__( 'Activate', 'boston' ) . '</a>' : ''
 				);
 			}
 
@@ -265,7 +265,7 @@ class Boston_Theme_Plugin_Enhancements {
 				$notice .= sprintf(
 					esc_html__( ' Please install %1$s. %2$s', 'boston' ),
 					esc_html( $plugin['name'] ),
-					( $install_url ) ? '<a href="' . $install_url . '">' . esc_html__( 'Install', 'boston' ) . '</a>' : ''
+					( $install_url ) ? '<a href="' . esc_url( $install_url ) . '">' . esc_html__( 'Install', 'boston' ) . '</a>' : ''
 				);
 			}
 
@@ -364,36 +364,36 @@ class Boston_Theme_Plugin_Enhancements {
 }
 add_action( 'admin_head', array( 'Boston_Theme_Plugin_Enhancements', 'init' ) );
 
-function enqueue_scripts() {
+function boston_pe_enqueue_scripts() {
 	// Add the admin JS if the notice has not been dismissed
-	if ( is_admin() && get_user_meta( get_current_user_id(), 'textdomain_jetpack_admin_notice', true ) !== 'dismissed' ) {
+	if ( is_admin() && get_user_meta( get_current_user_id(), 'boston_jetpack_admin_notice', true ) !== 'dismissed' ) {
 
 		// Adds our JS file to the queue that WordPress will load
-		wp_enqueue_script( 'textdomain_jetpack_admin_script', get_template_directory_uri() . '/inc/plugin-enhancements.js', array( 'jquery' ), '20160624', true );
+		wp_enqueue_script( 'boston_jetpack_admin_script', get_template_directory_uri() . '/assets/js/plugin-enhancements.js', array( 'jquery' ), '20160624', true );
 
 		// Make some data available to our JS file
-		wp_localize_script( 'textdomain_jetpack_admin_script', 'textdomain_jetpack_admin', array(
-			'textdomain_jetpack_admin_nonce' => wp_create_nonce( 'textdomain_jetpack_admin_nonce' ),
+		wp_localize_script( 'boston_jetpack_admin_script', 'boston_jetpack_admin', array(
+			'boston_jetpack_admin_nonce' => wp_create_nonce( 'boston_jetpack_admin_nonce' ),
 		));
 	}
 }
-add_action( 'admin_enqueue_scripts', 'enqueue_scripts' );
+add_action( 'admin_enqueue_scripts', 'boston_pe_enqueue_scripts' );
 
 /**
  *	Process the AJAX request on the server and send a response back to the JS.
  *	If nonce is valid, update the current user's meta to prevent notice from displaying.
  */
-function dismiss_admin_notice() {
+function boston_pe_dismiss_admin_notice() {
 	// Verify the security nonce and die if it fails
-	if ( ! isset( $_POST['textdomain_jetpack_admin_nonce'] ) || ! wp_verify_nonce( $_POST['textdomain_jetpack_admin_nonce'], 'textdomain_jetpack_admin_nonce' ) ) {
+	if ( ! isset( $_POST['boston_jetpack_admin_nonce'] ) || ! wp_verify_nonce( $_POST['boston_jetpack_admin_nonce'], 'boston_jetpack_admin_nonce' ) ) {
 		wp_die( __( 'Your request failed permission check.', 'boston' ) );
 	}
 	// Store the user's dimissal so that the notice doesn't show again
-	update_user_meta( get_current_user_id(), 'textdomain_jetpack_admin_notice', 'dismissed' );
+	update_user_meta( get_current_user_id(), 'boston_jetpack_admin_notice', 'dismissed' );
 	// Send success message
 	wp_send_json( array(
 		'status' => 'success',
 		'message' => __( 'Your request was processed. See ya!', 'boston' )
 	) );
 }
-add_action( 'wp_ajax_textdomain_jetpack_admin_notice', 'dismiss_admin_notice' );
+add_action( 'wp_ajax_boston_jetpack_admin_notice', 'boston_pe_dismiss_admin_notice' );

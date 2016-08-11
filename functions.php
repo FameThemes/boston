@@ -127,8 +127,8 @@ function boston_scripts() {
 	wp_enqueue_style( 'boston-norwester-font', get_template_directory_uri() . '/assets/css/font-norwester.css', array() );
 
 	// We don't need to prefix owl-carousel to avoid duplicate load just like genericons.
-	wp_enqueue_script( 'owl-carousel', get_template_directory_uri() . '/assets/js/theme.js', array(), '20151215', true );
-	wp_enqueue_script( 'boston-themejs', get_template_directory_uri() . '/assets/js/owl.carousel.min.js', array(), '1.3.3', true );
+	wp_enqueue_script( 'owl-carousel', get_template_directory_uri() . '/assets/js/owl.carousel.min.js', array(), '1.3.3', true );
+	wp_enqueue_script( 'boston-themejs', get_template_directory_uri() . '/assets/js/theme.js', array(), '20151215', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
