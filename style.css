@@ -1,9 +1,10 @@
+@charset "UTF-8";
 /*
 Theme Name: Boston
 Theme URI: https://www.famethemes.com/themes/boston
 Author: FameThemes
 Author URI: https://www.famethemes.com
-Description: A beautiful blog theme for WordPress
+Description: Boston is a minimal Wordpress Theme designed for blogger, it provides many features that blogger will love it. Whether you’re looking to share your own thoughts, write about your latest findings, Boston is designed to fulfill these and a lot more.
 Version: 1.0.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -1741,6 +1742,11 @@ object {
 	margin-bottom: 0px;
 	position: relative;
 	z-index: 1;
+}
+
+.featured_posts .post .entry-thumbnail img {
+	width: 100%;
+	height: auto;
 }
 
 .featured_posts .post .entry-header {
