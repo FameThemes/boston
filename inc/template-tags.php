@@ -42,7 +42,7 @@ function boston_posted_on() {
 	echo $cate.$byline.$posted_on;
 	if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 		echo '<span class="comments-link">';
-		echo '<i class="fa fa-comments-o"></i>';
+		echo '<i class="genericon genericon-comment"></i>';
 		comments_popup_link( '0', '1', '%' );
 		echo '</span>';
 	}
@@ -143,7 +143,9 @@ if ( ! function_exists( 'boston_footer_credit' ) ) {
     function boston_footer_credit()
     {
         ?>
+		<span class="theme-info-text">
         <?php printf( esc_html__( 'Boston Theme by %1$s', 'boston' ), '<a href="https://www.famethemes.com/">FameThemes</a>' ); ?>
+		</span>
         <?php
     }
 }
