@@ -82,7 +82,7 @@ h6 {
 
 h1 {
 	line-height: 1.2;
-	letter-spacing: -0.4px;
+	letter-spacing: -0.3px;
 	@include rem('font-size', 29px);
 	@include media-breakpoint-up(md) {
 		@include rem('font-size', 32px);
@@ -91,7 +91,7 @@ h1 {
 
 h2 {
 	line-height: 1.2;
-	letter-spacing: -0.3px;
+	letter-spacing: -0.2px;
 	@include rem('font-size', 25px);
 	@include media-breakpoint-up(md) {
 		@include rem('font-size', 28px);

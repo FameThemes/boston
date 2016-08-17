@@ -13,7 +13,12 @@
 		</div><!-- .container -->
 	</div><!-- #content -->
 
+	<?php do_action('boston_before_footer'); ?>
+
 	<footer id="colophon" class="site-footer" role="contentinfo">
+
+		<?php do_action('boston_footer_start'); ?>
+
 		<div class="container">
 			<div class="site-info">
 				<p>
@@ -25,6 +30,9 @@
 			</div>
 		</div>
 	</footer><!-- #colophon -->
+
+	<?php do_action('boston_after_footer'); ?>
+
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

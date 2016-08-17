@@ -122,6 +122,7 @@ add_action( 'widgets_init', 'boston_widgets_init' );
  * Enqueue scripts and styles.
  */
 function boston_scripts() {
+	wp_enqueue_style( 'boston-fonts', boston_fonts_url(), array(), null );
 	wp_enqueue_style( 'boston-style', get_stylesheet_uri() );
 	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/assets/fonts/genericons/genericons.css', array(), '3.4.1' );
 	wp_enqueue_style( 'boston-norwester-font', get_template_directory_uri() . '/assets/css/font-norwester.css', array() );
@@ -135,6 +136,37 @@ function boston_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'boston_scripts' );
+
+if ( ! function_exists( 'boston_fonts_url' ) ) :
+/**
+* Register Google fonts.
+* Create your own boston_fonts_url() function to override in a child theme.
+*/
+function boston_fonts_url() {
+	$fonts_url = '';
+	$fonts     = array();
+	$subsets   = 'latin,latin-ext';
+
+	/* translators: If there are characters in your language that are not supported by Open Sans, translate this to 'off'. Do not translate into your own language. */
+	if ( 'off' !== _x( 'on', 'Open Sans font: on or off', 'boston' ) ) {
+		$fonts[] = 'Open Sans:300,300i,400,400i,600,600i,700,700i';
+	}
+
+	/* translators: If there are characters in your language that are not supported by Playfair Display, translate this to 'off'. Do not translate into your own language. */
+	if ( 'off' !== _x( 'on', 'Playfair Display font: on or off', 'boston' ) ) {
+		$fonts[] = 'Playfair Display:400,400i,700,700i';
+	}
+
+	if ( $fonts ) {
+		$fonts_url = add_query_arg( array(
+			'family' => urlencode( implode( '|', $fonts ) ),
+			'subset' => urlencode( $subsets ),
+		), 'https://fonts.googleapis.com/css' );
+	}
+
+	return $fonts_url;
+}
+endif;
 
 /**
  * Custom template tags for this theme.

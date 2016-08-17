@@ -34,7 +34,7 @@ Boston includes support for Tiled Galleries in Jetpack.
 * Based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 * normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2015 Nicolas Gallagher and Jonathan Neal, [MIT](http://opensource.org/licenses/MIT)
 * Google Fonts https://www.google.com/fonts/specimen/Open+Sans, [OFL](scripts.sil.org/OFL)
-* Google Fonts https://www.google.com/fonts/specimen/Lato, [OFL](scripts.sil.org/OFL)
+* Google Fonts https://www.google.com/fonts/specimen/Playfair+Display, [OFL](scripts.sil.org/OFL)
 * Norwester Font jamiewilson.io, (C) October 14, 2013 Jamie Wilson, [SIL Open Font License v1.10](https://www.fontsquirrel.com/license/norwester)
 * Genericons http://www.genericons.com, (C) 2013-2015 Automattic.com, GNU GPL, Version 2
 * OwlCarousel http://www.owlgraphic.com/owlcarousel/, (C) 2013 Bartosz Wojciechowski, [MIT](http://opensource.org/licenses/MIT)
@@ -45,6 +45,9 @@ Boston includes support for Tiled Galleries in Jetpack.
 * Image use in screenshot: https://www.pexels.com/photo/man-suit-flowers-petals-94289/. [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
 
 == Changelog ==
+
+= 1.0.6 =
+* Enqueue Google Fonts
 
 = 1.0.5 =
 * Update theme screenshot.
