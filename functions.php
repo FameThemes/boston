@@ -196,3 +196,8 @@ require get_template_directory() . '/inc/jetpack.php';
  * Load plugin enhancement file to display admin notices.
  */
 require get_template_directory() . '/inc/plugin-enhancements.php';
+
+/**
+ * Add theme info page
+ */
+require get_template_directory() . '/inc/dashboard.php';
