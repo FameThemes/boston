@@ -48,6 +48,8 @@ Boston includes support for Tiled Galleries in Jetpack.
 
 = 1.0.6 =
 * Enqueue Google Fonts
+* Improve footer + main content style
+* Add more hooks to footer + header.
 
 = 1.0.5 =
 * Update theme screenshot.
