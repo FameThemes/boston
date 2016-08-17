@@ -12,7 +12,7 @@
 	// if we have no posts, our work is done here.
 	if ( empty( $featured_posts ) )
 		return;
-
+    global $post;
 	// Let's loop through our posts ?>
 	<div class="featured_posts">
 		<?php foreach ( $featured_posts as $post ) : setup_postdata( $post ); ?>
