@@ -31,7 +31,9 @@
 					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'boston' ); ?></button>
 					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
 				</nav><!-- #site-navigation -->
+				<?php do_action('boston_before_top_searchform'); ?>
 				<div class="topbar-search">
+					<?php do_action('boston_top_searchform'); ?>
 					<form action="/" method="get">
 					    <input type="text" name="s" id="search" value="<?php the_search_query(); ?>" placeholder="<?php esc_html_e('Search and hit enter...', 'boston') ?>" />
 						<span class="genericon genericon-search"></span>
@@ -60,6 +62,7 @@
 					<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
 				<?php
 				endif; ?>
+				<?php do_action('boston_after_site_description'); ?>
 			</div>
 		</div><!-- .site-branding -->
 
