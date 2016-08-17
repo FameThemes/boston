@@ -134,6 +134,10 @@ function boston_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+    if ( function_exists( 'boston_get_custom_style' ) ) {
+        wp_add_inline_style( 'boston-style', boston_get_custom_style() );
+    }
+
 }
 add_action( 'wp_enqueue_scripts', 'boston_scripts' );
 

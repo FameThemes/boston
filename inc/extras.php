@@ -45,3 +45,46 @@ function boston_custom_excerpt_more( $more ) {
 	return '...';
 }
 add_filter( 'excerpt_more', 'boston_custom_excerpt_more' );
+
+/**
+ * Custom styling
+ *
+ * @return string
+ */
+function boston_get_custom_style(){
+    $css = '';
+    $primary_color = get_theme_mod( 'styling_color_primary' );
+    if ( $primary_color ) {
+        $primary_color = '#'.esc_attr( $primary_color );
+
+$css .= '.archive__layout1 .entry-more a:hover {
+    border-color: '.$primary_color.';
+    background: '.$primary_color.';
+}
+a.entry-category {
+    background: '.$primary_color.';
+}
+.entry-content a, .comment-content a {
+	color: '.$primary_color.';
+}
+.sticky .entry-title:before {
+	color: '.$primary_color.';
+}
+.search-results .page-title span {
+	color: '.$primary_color.';
+}
+.widget_categories li a {
+	color: '.$primary_color.';
+}
+@media (min-width: 992px) {
+	.main-navigation .current_page_item > a,
+	.main-navigation .current-menu-item > a,
+	.main-navigation .current_page_ancestor > a,
+	.main-navigation .current-menu-ancestor > a {
+		color: '.$primary_color.';
+	}
+}';
+
+    }
+    return $css;
+}

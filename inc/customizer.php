@@ -17,6 +17,37 @@ function boston_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+
+
+    /*------------------------------------------------------------------------*/
+
+    $wp_customize->add_section( 'styling' ,
+        array(
+            'priority'    => 24,
+            'title'       => esc_html__( 'Styling', 'boston' ),
+            'description' => '',
+        )
+    );
+    $wp_customize->add_setting( 'styling_color_primary', array(
+        'default'     => '#d65456',
+        'sanitize_callback' => 'sanitize_hex_color_no_hash',
+        'sanitize_js_callback' => 'maybe_hash_hex_color',
+    ) );
+
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'styling_color_primary',
+            array(
+                'label'      => esc_html__( 'Primary Color', 'boston' ),
+                'section'    => 'styling',
+            )
+        )
+    );
+
+
+
+
 }
 add_action( 'customize_register', 'boston_customize_register' );
 
