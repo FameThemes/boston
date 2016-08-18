@@ -8,7 +8,7 @@ if ( ! function_exists( 'boston_theme_info' ) ) {
     function boston_theme_info()
     {
         $theme_data = wp_get_theme();
-        add_theme_page(sprintf(esc_html__('%s Theme Dashboard', 'boston'), $theme_data->Name), sprintf(esc_html__('%s', 'boston'), $theme_data->Name), 'edit_theme_options', 'boston', 'boston_theme_info_page');
+        add_theme_page(sprintf(esc_html__('%s Theme Dashboard', 'boston'), $theme_data->Name), sprintf(esc_html__('%s theme', 'boston'), $theme_data->Name), 'edit_theme_options', 'boston', 'boston_theme_info_page');
     }
 }
 
@@ -36,10 +36,10 @@ if ( ! function_exists( 'boston_theme_info_page' ) ) {
             <div
                 class="about-text"><?php esc_html_e('Boston is a minimal Wordpress Theme designed for blogger, it provides many features that blogger will love. Whether you’re looking to share your own thoughts, write about your latest findings, Boston is designed to fulfill these and a lot more.', 'boston') ?></div>
             <a target="_blank" href="<?php echo esc_url('http://www.famethemes.com/?utm_source=theme_dashboard_page&utm_medium=badge_link&utm_campaign=theme_admin'); ?>"
-               class="famethemes-badge wp-badge"><span><?php _e('FameThemes', 'boston'); ?></span></a>
+               class="famethemes-badge wp-badge"><span><?php esc_html('FameThemes', 'boston'); ?></span></a>
 
             <h2 class="nav-tab-wrapper">
-                <a href="?page=ft_codilight_lite" class="nav-tab nav-tab-active"><?php echo esc_html($theme_data->Name); ?></a>
+                <a href="<?php echo esc_url( add_query_arg( array( 'page'=>'boston' ), admin_url( 'themes.php' ) ) ); ?>" class="nav-tab nav-tab-active"><?php echo esc_html($theme_data->Name); ?></a>
             </h2>
 
             <div class="theme_info">

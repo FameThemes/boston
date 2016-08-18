@@ -53,10 +53,13 @@ add_filter( 'excerpt_more', 'boston_custom_excerpt_more' );
  */
 function boston_get_custom_style(){
     $css = '';
-    $primary_color = get_theme_mod( 'styling_color_primary' );
+    $primary_color = esc_attr( get_theme_mod( 'styling_color_primary' ) );
     if ( $primary_color ) {
-        $primary_color = '#'.esc_attr( $primary_color );
+        $primary_color = '#'.$primary_color;
 
+        /**
+         * @TODO beautiful output code
+         */
 $css .= '.archive__layout1 .entry-more a:hover {
     border-color: '.$primary_color.';
     background: '.$primary_color.';
