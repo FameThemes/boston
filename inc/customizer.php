@@ -20,7 +20,6 @@ function boston_customize_register( $wp_customize ) {
 
 
     /*------------------------------------------------------------------------*/
-
     $wp_customize->add_section( 'styling' ,
         array(
             'priority'    => 24,
@@ -45,8 +44,71 @@ function boston_customize_register( $wp_customize ) {
         )
     );
 
+    /*------------------------------------------------------------------------*/
 
+    $wp_customize->add_section( 'featured_section' ,
+        array(
+            'priority'    => 26,
+            'title'       => esc_html__( 'Featured Content', 'boston' ),
+            'description' => 'Easily feature all posts with the "featured" tag or a tag of your choice.',
+        )
+    );
 
+    $wp_customize->add_setting( 'featured_tags', array(
+        'sanitize_callback' => 'sanitize_text_field',
+        'default' => 'featured',
+    ) );
+
+    $wp_customize->add_control(
+        'featured_tags',
+        array(
+            'type' => 'text',
+            'label'      => esc_html__( 'Tag name', 'boston' ),
+            'section'    => 'featured_section',
+        )
+    );
+
+    $wp_customize->add_setting( 'featured_number', array(
+        'sanitize_callback' => 'sanitize_text_field',
+        'default' => 10,
+    ) );
+
+    $wp_customize->add_control(
+        'featured_number',
+        array(
+            'type' => 'text',
+            'label'      => esc_html__( 'Number post to show', 'boston' ),
+            'section'    => 'featured_section',
+        )
+    );
+
+    $wp_customize->add_setting( 'featured_hide_tag', array(
+        'sanitize_callback' => 'sanitize_text_field',
+        'default' => 1,
+    ) );
+
+    $wp_customize->add_control(
+        'featured_hide_tag',
+        array(
+            'type' => 'checkbox',
+            'label'      => esc_html__( 'Hide tag from displaying in post meta and tag clouds.', 'boston' ),
+            'section'    => 'featured_section',
+        )
+    );
+
+    $wp_customize->add_setting( 'featured_thumb_only', array(
+        'sanitize_callback' => 'sanitize_text_field',
+        'default' => 1,
+    ) );
+
+    $wp_customize->add_control(
+        'featured_thumb_only',
+        array(
+            'type' => 'checkbox',
+            'label'      => esc_html__( 'Show posts which have featured image only.', 'boston' ),
+            'section'    => 'featured_section',
+        )
+    );
 
 }
 add_action( 'customize_register', 'boston_customize_register' );

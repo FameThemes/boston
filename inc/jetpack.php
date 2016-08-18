@@ -29,6 +29,7 @@ function boston_jetpack_setup() {
 	    'max_posts'  => 10,
 	    'post_types' => array( 'post' ),
 	) );
+
 }
 add_action( 'after_setup_theme', 'boston_jetpack_setup' );
 
@@ -48,9 +49,3 @@ function boston_infinite_scroll_render() {
 	}
 }
 
-/**
- * Get feature content posts.
- */
-function boston_get_featured_posts() {
-    return apply_filters( 'boston_get_featured_posts', array() );
-}
