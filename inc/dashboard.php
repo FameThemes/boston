@@ -66,11 +66,10 @@ if ( ! function_exists( 'boston_theme_info_page' ) ) {
                         <div class="theme_link">
                             <h3><?php esc_html_e('Having Trouble, Need Support?', 'boston'); ?></h3>
 
-                            <p class="about"><?php printf(esc_html__('Support for %s WordPress theme is conducted through the WordPress free theme support forum.', 'boston'), $theme_data->Name); ?></p>
+                            <p class="about"><?php printf(esc_html__('Support for %s WordPress theme is conducted through FameThemes support ticket system.', 'boston'), $theme_data->Name); ?></p>
 
                             <p>
-                                <a href="https://wordpress.org/support/theme/boston" target="_blank"
-                                   class="button button-secondary"><?php echo sprintf(esc_html('Go To %s Support Forum', 'boston'), $theme_data->Name); ?></a>
+                                <a class="button button-secondary" target="_blank" href="https://www.famethemes.com/dashboard/tickets/"><?php esc_html_e( 'Create a support ticket', 'boston' ) ?></a>
                             </p>
                         </div>
                     </div>
@@ -85,4 +84,3 @@ if ( ! function_exists( 'boston_theme_info_page' ) ) {
         <?php
     }
 }
-
