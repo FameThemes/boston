@@ -77,6 +77,45 @@ a.entry-category {
 	}
 }
 
+.entry-footer {
+	color: $color__meta;
+	> span {
+		display: block;
+		margin-bottom: 3px;
+		&:last-child {
+			margin-bottom: 0px;
+		}
+	}
+	a {
+		color: $color__primary;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	.cat-links:before, .tags-links:before, .edit-link:before {
+		-moz-osx-font-smoothing: grayscale;
+		font-family: "Genericons";
+		font-style: normal;
+		font-variant: normal;
+		font-weight: normal;
+		text-decoration: inherit;
+		text-transform: none;
+		font-size: 18px;
+		position: relative;
+		top: 4px;
+		margin-right: 3px;
+	}
+	.cat-links:before {
+		content: '\f301';
+	}
+	.tags-links:before {
+		content: '\f302';
+	}
+	.edit-link:before {
+		content: '\f411';
+	}
+}
+
 .entry-thumbnail {
 	@include rem('margin-bottom', 20px);
 }
