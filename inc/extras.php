@@ -79,6 +79,9 @@ a.entry-category {
 .widget_categories li a {
 	color: '.$primary_color.';
 }
+.entry-footer a {
+	color: '.$primary_color.';
+}
 @media (min-width: 992px) {
 	.main-navigation .current_page_item > a,
 	.main-navigation .current-menu-item > a,
