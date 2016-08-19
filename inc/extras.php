@@ -87,7 +87,7 @@ function boston_get_featured_tags(){
     $jetpack_featured = get_option( 'featured-content' );
     $default_tag = '';
     if( is_array( $jetpack_featured ) && isset( $jetpack_featured['tag-name'] ) ) {
-        $default_tag = wp_strip_all_tags( $jetpack_featured['tag-name'] );
+        $default_tag = wp_strip_all_tags( $jetpack_featured['tag-name'], true );
     }
 
     if ( ! $default_tag ) {
