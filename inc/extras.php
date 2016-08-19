@@ -67,15 +67,9 @@ $css .= '.archive__layout1 .entry-more a:hover {
 a.entry-category {
     background: '.$primary_color.';
 }
-.entry-content a, .comment-content a {
-	color: '.$primary_color.';
-}
-.sticky .entry-title:before {
-	color: '.$primary_color.';
-}
-.search-results .page-title span {
-	color: '.$primary_color.';
-}
+.entry-content a, .comment-content a,
+.sticky .entry-title:before,
+.search-results .page-title span,
 .widget_categories li a {
 	color: '.$primary_color.';
 }
@@ -96,7 +90,17 @@ a.entry-category {
 }
 
 function boston_get_featured_tags(){
-    $tags = wp_strip_all_tags( get_theme_mod( 'featured_tags', 'featured' ), true );
+    $jetpack_featured = get_option( 'featured-content' );
+    $default_tag = '';
+    if( is_array( $jetpack_featured ) && isset( $jetpack_featured['tag-name'] ) ) {
+        $default_tag = wp_strip_all_tags( $jetpack_featured['tag-name'], true );
+    }
+
+    if ( ! $default_tag ) {
+        $default_tag = 'featured';
+    }
+
+    $tags = wp_strip_all_tags( get_theme_mod( 'featured_tags', $default_tag ), true );
     $tags = explode( ',', $tags );
     $tags = array_map( 'trim', $tags );
     $tags = array_filter( $tags );
