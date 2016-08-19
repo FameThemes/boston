@@ -24,11 +24,6 @@ function boston_jetpack_setup() {
 	// Add theme support for Responsive Videos.
 	add_theme_support( 'jetpack-responsive-videos' );
 
-	add_theme_support( 'featured-content', array(
-	    'filter'     => 'boston_get_featured_posts',
-	    'max_posts'  => 10,
-	    'post_types' => array( 'post' ),
-	) );
 }
 add_action( 'after_setup_theme', 'boston_jetpack_setup' );
 
@@ -46,11 +41,4 @@ function boston_infinite_scroll_render() {
 			echo '</div>';
 		endif;
 	}
-}
-
-/**
- * Get feature content posts.
- */
-function boston_get_featured_posts() {
-    return apply_filters( 'boston_get_featured_posts', array() );
 }

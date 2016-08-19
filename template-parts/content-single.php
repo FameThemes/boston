@@ -29,7 +29,7 @@
     		<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail( 'boston-list-medium' ); ?></a>
     	</aside>
     	<?php } ?>
-        
+
 		<?php
 		endif; ?>
 	</header><!-- .entry-header -->
@@ -39,6 +39,6 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php //boston_entry_footer(); ?>
+		<?php boston_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
