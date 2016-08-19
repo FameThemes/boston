@@ -43,7 +43,7 @@ function boston_customize_register( $wp_customize ) {
         array(
             'panel'       => 'theme_options',
             'title'       => esc_html__( 'Featured Content', 'boston' ),
-            'description' => 'Easily feature all posts with the "featured" tag or a tag of your choice.',
+            'description' => esc_html__( 'Easily feature all posts with the "featured" tag or a tag of your choice.', 'boston' ),
         )
     );
 
