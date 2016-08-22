@@ -1,0 +1,46 @@
+.customize-control-radio-image .choices input{
+    display: none;
+}
+.customize-control-radio-image .choices:after {
+    clear: both; content: " "; display: block;
+}
+.customize-control-radio-image .choices {
+    margin-left: -5px;
+    margin-right: -5px;
+}
+.customize-control-radio-image .choices * {
+    box-sizing: border-box;
+}
+.customize-control-radio-image .choices .col {
+    width: 33%;
+    padding: 5px;
+    float: left;
+}
+.customize-control-radio-image .choices label {
+    display: block;
+    position: relative;
+    line-height: 1;
+}
+.customize-control-radio-image .choices .pro-item {
+    cursor: not-allowed ;
+}
+.choice-item .pr{
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    background: #f50000;
+    color: #ffffff;
+    text-transform: uppercase;
+    padding: 2px 5px;
+    font-size: 10px;
+}
+.customize-control-radio-image .choices img {
+    max-width: 100%;
+    height: auto;
+    border: 3px solid #DDDDDD;
+    line-height: 1;
+}
+
+.customize-control-radio-image .choices input:checked ~ img {
+    border-color: #347dca;
+}

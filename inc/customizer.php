@@ -5,6 +5,8 @@
  * @package Boston
  */
 
+require_once get_template_directory().'/inc/customizer-controls.php';
+
 /**
  * Add postMessage support for site title and description for the Theme Customizer.
  *
@@ -103,6 +105,46 @@ function boston_customize_register( $wp_customize ) {
             )
         );
 
+    $wp_customize->add_section( 'archive_section' ,
+        array(
+            'panel'       => 'theme_options',
+            'title'       => esc_html__( 'Archive Content', 'boston' ),
+            'description' => esc_html__( 'Select archive content layout to display.', 'boston' ),
+        )
+    );
+
+    $wp_customize->add_setting( 'archive_layout', array(
+        'sanitize_callback' => 'sanitize_text_field',
+        'default' => 'default',
+    ) );
+
+    $wp_customize->add_control(
+       new Boston_Customize_Radio_Image_Control(
+           $wp_customize,
+           'archive_layout',
+           array(
+               'choices'     =>array(
+                   'layout_1' =>  array(
+                       'img' => '//scontent-hkg3-1.cdninstagram.com/t51.2885-15/s320x320/e15/c0.87.720.720/14031529_775725205864607_1002492706_n.jpg',
+
+                   ),
+                   'layout_2' =>array(
+                       'img' => '//scontent-hkg3-1.cdninstagram.com/t51.2885-15/s320x320/e15/14052335_1770308216592072_143314670_n.jpg'
+                   ),
+                   'layout_3' => array(
+                       'img' => '//scontent-hkg3-1.cdninstagram.com/t51.2885-15/s320x320/e15/c0.87.720.720/13658508_1558650024442632_1769281194_n.jpg',
+                       'pro' => true,
+
+                   ),
+               ),
+               'label'      => esc_html__( 'Archive layout', 'boston' ),
+               'section'    => 'archive_section',
+           )
+       )
+    );
+
+
+
     /**
      * Theme Styling
      */
@@ -144,3 +186,12 @@ function boston_customize_preview_js() {
 	wp_enqueue_script( 'boston_customizer', get_template_directory_uri() . '/assets/js/customizer.js', array( 'customize-preview' ), '20151215', true );
 }
 add_action( 'customize_preview_init', 'boston_customize_preview_js' );
+
+
+/**
+ * Load customizer css
+ */
+function boston_customizer_load_css(){
+    wp_enqueue_style( 'boston-customizer', get_template_directory_uri() . '/assets/css/customizer.css' );
+}
+add_action('customize_controls_print_styles', 'boston_customizer_load_css');
