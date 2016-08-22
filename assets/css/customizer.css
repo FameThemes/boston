@@ -4,17 +4,18 @@
 .customize-control-radio-image .choices:after {
     clear: both; content: " "; display: block;
 }
-.customize-control-radio-image .choices {
-    margin-left: -5px;
-    margin-right: -5px;
-}
 .customize-control-radio-image .choices * {
     box-sizing: border-box;
 }
 .customize-control-radio-image .choices .col {
-    width: 33%;
-    padding: 5px;
+    width: 48%;
+    margin-right: 4%;
     float: left;
+    margin-top: 16px;
+
+}
+.customize-control-radio-image .choices .col:nth-child(2) {
+    margin-right: 0px;
 }
 .customize-control-radio-image .choices label {
     display: block;
@@ -26,7 +27,7 @@
 }
 .choice-item .pr{
     position: absolute;
-    bottom: 5px;
+    top: 5px;
     right: 5px;
     background: #f50000;
     color: #ffffff;
