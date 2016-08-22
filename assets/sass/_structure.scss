@@ -116,7 +116,7 @@
 
 /* Site Content */
 .site-content {
-    @include rem('padding', 50px 0px 60px);
+    @include rem('padding', 50px 0px 80px);
     border-top: 1px solid $color__border;
 }
 

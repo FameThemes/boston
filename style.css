@@ -873,8 +873,8 @@ textarea {
 
 /* Site Content */
 .site-content {
-	padding: 50px 0px 60px;
-	padding:  3.125rem 0rem 3.75rem;
+	padding: 50px 0px 80px;
+	padding:  3.125rem 0rem 5rem;
 	border-top: 1px solid #f1f1f1;
 }
 
@@ -1644,7 +1644,7 @@ object {
 	font-size: 0.6875rem;
 	text-transform: uppercase;
 	letter-spacing: 1.5px;
-	font-weight: 600;
+	font-weight: 300;
 }
 
 /* Sidebar */
@@ -1704,6 +1704,10 @@ object {
 	top: 6px;
 }
 
+.widget select {
+	max-width: 100%;
+}
+
 .widget_categories li a {
 	color: #d65456;
 }
@@ -1728,6 +1732,21 @@ object {
 	letter-spacing: 2px;
 	font-weight: 600;
 	display: inline-block;
+}
+
+/* Recent Entries */
+.widget_recent_entries a {
+	font-family: "Playfair Display", "Open Sans", Georgia, serif;
+	font-size: 16px;
+	font-size: 1rem;
+}
+
+.widget_recent_entries .post-date {
+	display: block;
+	font-style: italic;
+	font-size: 12px;
+	font-size: 0.75rem;
+	margin-top: 3px;
 }
 
 /*--------------------------------------------------------------
