@@ -5,7 +5,6 @@
  * @package Boston
  */
 
-require_once get_template_directory().'/inc/customizer-controls.php';
 
 /**
  * Add postMessage support for site title and description for the Theme Customizer.
@@ -13,6 +12,8 @@ require_once get_template_directory().'/inc/customizer-controls.php';
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
 function boston_customize_register( $wp_customize ) {
+
+    require_once get_template_directory().'/inc/customizer-controls.php';
 
 	// Custom WP default control & settings.
 	$wp_customize->get_section( 'title_tagline' )->title = esc_html__('Site Title, Tagline & Logo', 'boston');
