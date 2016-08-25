@@ -105,6 +105,9 @@ function boston_get_featured_tags(){
 }
 
 function boston_setup_featured_content( $query ){
+    if ( is_admin() ) {
+        return ;
+    }
     if ( $query->is_main_query() ) {
         if ( is_home() || is_front_page() || is_page_template() ) {
             if (!isset($GLOBALS['boston_featured_posts'])) {
@@ -156,6 +159,9 @@ add_action( 'pre_get_posts', 'boston_setup_featured_content' );
  * @return mixed
  */
 function boston_hide_featured_tags( $terms, $taxonomies = '' ){
+    if ( is_admin() ) {
+        return $terms;
+    }
     if ( ! get_theme_mod( 'featured_hide_tag', 1 ) ) {
         return $terms;
     }
@@ -201,6 +207,10 @@ add_filter( 'get_terms', 'boston_hide_featured_tags', 90, 2 );
  * @param string $tax
  */
 function boston_hide_post_featured_tags( $terms, $post_id = null, $tax = '' ){
+
+    if ( is_admin() ) {
+        return $terms;
+    }
 
     if ( ! get_theme_mod( 'featured_hide_tag', 1 ) ) {
         return $terms;

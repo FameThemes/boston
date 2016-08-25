@@ -18,18 +18,21 @@ class Boston_Customize_Radio_Image_Control extends WP_Customize_Control {
         <div class="choices">
         <?php foreach ( $this->choices as $value => $item ) {
             $is_pro = isset( $item['pro'] ) && $item['pro'] ? true : false;
+            $label = isset( $item['label'] ) ? $item['label'] : '';
             ?>
             <div class="col">
-                <label class="choice-item <?php echo ( $is_pro ) ? 'pro-item' : ''; ?>">
-                    <?php if ( $is_pro ) { ?>
-                        <span class="pr"><?php esc_html_e( 'Pro', 'boston' ); ?></span>
-                    <?php } else { ?>
+                <?php if ( $is_pro ) { ?>
+                <a title="<?php echo esc_attr( $label ); ?>" href="<?php echo ( isset( $item['link'] ) ) ? esc_url( $item['link'] ) : '#'; ?>" target="_blank" class="choice-item <?php echo ( $is_pro ) ? 'pro-item' : ''; ?>">
+                    <span class="pr"><?php esc_html_e( 'Pro', 'boston' ); ?></span>
+                    <img src="<?php echo esc_attr($item['img']); ?>" alt="">
+                </a>
+                <?php } else { ?>
+                    <label title="<?php echo esc_attr( $label ); ?>" class="choice-item <?php echo ( $is_pro ) ? 'pro-item' : ''; ?>">
                         <input type="radio" value="<?php echo esc_attr($value); ?>" name="<?php echo esc_attr($name); ?>" <?php $this->link();
                         checked($this->value(), $value); ?> />
-                    <?php } ?>
-
-                    <img src="<?php echo esc_attr($item['img']); ?>" alt="">
-                </label>
+                        <img src="<?php echo esc_attr($item['img']); ?>" alt="">
+                    </label>
+                <?php } ?>
             </div>
             <?php
         } ?>

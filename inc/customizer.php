@@ -116,7 +116,7 @@ function boston_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting( 'archive_layout', array(
         'sanitize_callback' => 'sanitize_text_field',
-        'default' => 'default',
+        'default' => 'layout_1',
     ) );
 
     $wp_customize->add_control(
@@ -126,19 +126,29 @@ function boston_customize_register( $wp_customize ) {
            array(
                'choices'     =>array(
                    'layout_1' =>  array(
-                       'img' => '//scontent-hkg3-1.cdninstagram.com/t51.2885-15/s320x320/e15/c0.87.720.720/14031529_775725205864607_1002492706_n.jpg',
-
+                       'img' => get_template_directory_uri() . '/assets/images/layout1.png',
+                       'label' => esc_html__( 'Layout 1', 'boston' ),
                    ),
-                   'layout_2' =>array(
-                       'img' => '//scontent-hkg3-1.cdninstagram.com/t51.2885-15/s320x320/e15/14052335_1770308216592072_143314670_n.jpg'
-                   ),
-                   'layout_3' => array(
-                       'img' => '//scontent-hkg3-1.cdninstagram.com/t51.2885-15/s320x320/e15/c0.87.720.720/13658508_1558650024442632_1769281194_n.jpg',
+                   'layout_2' =>  array(
+                       'img' => get_template_directory_uri() . '/assets/images/layout2.png',
+                       'label' => esc_html__( 'Layout 2', 'boston' ),
                        'pro' => true,
-
+                       'link' => 'https://www.famethemes.com/themes/boston-pro/'
+                   ),
+                   'layout_3' =>  array(
+                       'img' => get_template_directory_uri() . '/assets/images/layout3.png',
+                       'label' => esc_html__( 'Layout 3', 'boston' ),
+                       'pro' => true,
+                       'link' => 'https://www.famethemes.com/themes/boston-pro/'
+                   ),
+                   'layout_4' =>  array(
+                       'img' => get_template_directory_uri() . '/assets/images/layout4.png',
+                       'label' => esc_html__( 'Layout 4', 'boston' ),
+                       'pro' => true,
+                       'link' => 'https://www.famethemes.com/themes/boston-pro/'
                    ),
                ),
-               'label'      => esc_html__( 'Archive layout', 'boston' ),
+               'label'      => esc_html__( 'Homepage articles listing layout', 'boston' ),
                'section'    => 'archive_section',
            )
        )

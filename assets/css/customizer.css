@@ -4,29 +4,31 @@
 .customize-control-radio-image .choices:after {
     clear: both; content: " "; display: block;
 }
-.customize-control-radio-image .choices {
-    margin-left: -5px;
-    margin-right: -5px;
-}
 .customize-control-radio-image .choices * {
     box-sizing: border-box;
 }
 .customize-control-radio-image .choices .col {
-    width: 33%;
-    padding: 5px;
+    width: 48%;
+    margin-right: 0;
     float: left;
+    margin-top: 16px;
+
 }
-.customize-control-radio-image .choices label {
+.customize-control-radio-image .choices .col:nth-of-type(odd) {
+    margin-right: 4%;
+}
+.customize-control-radio-image .choices label,
+.customize-control-radio-image .choices a {
     display: block;
     position: relative;
     line-height: 1;
 }
 .customize-control-radio-image .choices .pro-item {
-    cursor: not-allowed ;
+    cursor: pointer;
 }
 .choice-item .pr{
     position: absolute;
-    bottom: 5px;
+    top: 5px;
     right: 5px;
     background: #f50000;
     color: #ffffff;
