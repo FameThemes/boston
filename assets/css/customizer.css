@@ -46,3 +46,12 @@
 .customize-control-radio-image .choices input:checked ~ img {
     border-color: #347dca;
 }
+
+
+/* Pro panel */
+#accordion-section-boston_pro .accordion-section-title,
+#accordion-section-boston_pro .accordion-section-title::before,
+#accordion-section-boston_pro .accordion-section-title:hover {
+    background: #d54e21 !important;
+    color: #ffffff !important;
+}

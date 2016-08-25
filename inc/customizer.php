@@ -162,7 +162,8 @@ function boston_customize_register( $wp_customize ) {
         array(
             'title'       => esc_html__( 'Styling', 'boston' ),
             'description' => '',
-            'panel' => 'theme_options',
+            'priority' => 48
+            //'panel' => 'theme_options',
         )
     );
 
@@ -183,6 +184,29 @@ function boston_customize_register( $wp_customize ) {
             )
         );
 
+
+        /**
+         * Theme boston-pro
+         */
+        $wp_customize->add_section( 'boston_pro' ,
+            array(
+                'title'       => esc_html__( 'Boston Pro', 'boston' ),
+                'description' => '',
+            )
+        );
+
+            $wp_customize->add_setting( 'boston_pro', array() );
+            $wp_customize->add_control(
+                new Boston_Customize_Pro_Control(
+                    $wp_customize,
+                    'boston_pro',
+                    array(
+                        'label'      => esc_html__( 'Boston Pro', 'boston' ),
+                        'description'   => esc_html__( 'Something about Boston Pro description', 'boston' ),
+                        'section'    => 'boston_pro',
+                    )
+                )
+            );
 
 
 

@@ -41,3 +41,17 @@ class Boston_Customize_Radio_Image_Control extends WP_Customize_Control {
 
     }
 }
+
+class Boston_Customize_Pro_Control extends WP_Customize_Control {
+    public $type = 'boston_pro';
+    function render_content(){
+        if ( ! empty( $this->label ) ) : ?>
+            <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+        <?php endif;
+        if ( ! empty( $this->description ) ) : ?>
+            <div class="description customize-control-description"><?php echo $this->description ; ?></div>
+        <?php endif; ?>
+        <?php
+
+    }
+}
