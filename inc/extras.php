@@ -67,7 +67,8 @@ a.entry-category {
 .entry-content a, .comment-content a,
 .sticky .entry-title:before,
 .search-results .page-title span,
-.widget_categories li a {
+.widget_categories li a,
+.footer-widget-area a {
 	color: '.$primary_color.';
 }
 @media (min-width: 992px) {

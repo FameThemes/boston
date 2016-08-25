@@ -122,7 +122,7 @@ ul,ol,dl,p,details,address,.vcard,figure,pre,fieldset,table,dt,dd,hr {
 	margin-top: 0;
 }
 p,ul,ol,dl,blockquote {
-	@extend .break;
+	@extend .break !optional;
 }
 
 
@@ -175,7 +175,7 @@ pre {
 	@include rem('margin', 0 0 20px 0);
 	@include rem('padding', 20px);
 	background: #f8f9f9;
-	@extend .break;
+	@extend .break !optional;
 }
 
 details {

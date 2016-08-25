@@ -1,10 +1,9 @@
-@charset "UTF-8";
 /*
 Theme Name: Boston
 Theme URI: https://www.famethemes.com/themes/boston
 Author: FameThemes
 Author URI: https://www.famethemes.com
-Description: Boston is a minimal Wordpress Theme designed for blogger, it provides many features that blogger will love. Whether you’re looking to share your own thoughts, write about your latest findings, Boston is designed to fulfill these and a lot more.
+Description: Boston is a minimal Wordpress Theme designed for blogger, it provides many features that blogger will love. Whether you are looking to share your own thoughts, write about your latest findings, Boston is designed to fulfill these and a lot more.
 Version: 1.0.7
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -873,8 +872,8 @@ textarea {
 
 /* Site Content */
 .site-content {
-	padding: 50px 0px 60px;
-	padding:  3.125rem 0rem 3.75rem;
+	padding: 50px 0px 80px;
+	padding:  3.125rem 0rem 5rem;
 	border-top: 1px solid #f1f1f1;
 }
 
@@ -910,8 +909,8 @@ textarea {
 
 /* Site Footer */
 .site-footer {
-	padding: 30px 0px;
-	padding:  1.875rem 0rem;
+	padding: 22px 0px;
+	padding:  1.375rem 0rem;
 	border-top: 1px solid #f1f1f1;
 	font-size: 12px;
 	color: #777777;
@@ -1644,7 +1643,7 @@ object {
 	font-size: 0.6875rem;
 	text-transform: uppercase;
 	letter-spacing: 1.5px;
-	font-weight: 600;
+	font-weight: 500;
 }
 
 /* Sidebar */
@@ -1704,6 +1703,10 @@ object {
 	top: 6px;
 }
 
+.widget select {
+	max-width: 100%;
+}
+
 .widget_categories li a {
 	color: #d65456;
 }
@@ -1728,6 +1731,21 @@ object {
 	letter-spacing: 2px;
 	font-weight: 600;
 	display: inline-block;
+}
+
+/* Recent Entries */
+.widget_recent_entries a {
+	font-family: "Playfair Display", "Open Sans", Georgia, serif;
+	font-size: 16px;
+	font-size: 1rem;
+}
+
+.widget_recent_entries .post-date {
+	display: block;
+	font-style: italic;
+	font-size: 12px;
+	font-size: 0.75rem;
+	margin-top: 3px;
 }
 
 /*--------------------------------------------------------------
