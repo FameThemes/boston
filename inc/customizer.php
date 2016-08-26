@@ -156,33 +156,25 @@ function boston_customize_register( $wp_customize ) {
 
 
     /**
-     * Theme Styling
+     * Theme Color
      */
-    $wp_customize->add_section( 'styling' ,
-        array(
-            'title'       => esc_html__( 'Styling', 'boston' ),
-            'description' => '',
-            'priority' => 48
-            //'panel' => 'theme_options',
+    $wp_customize->add_setting( 'styling_color_primary', array(
+        'default'     => '#d65456',
+        'sanitize_callback' => 'sanitize_hex_color_no_hash',
+        'sanitize_js_callback' => 'maybe_hash_hex_color',
+    ) );
+
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'styling_color_primary',
+            array(
+                'label'      => esc_html__( 'Primary Color', 'boston' ),
+                'section'    => 'colors',
+                'priority' => 5
+            )
         )
     );
-
-        $wp_customize->add_setting( 'styling_color_primary', array(
-            'default'     => '#d65456',
-            'sanitize_callback' => 'sanitize_hex_color_no_hash',
-            'sanitize_js_callback' => 'maybe_hash_hex_color',
-        ) );
-
-        $wp_customize->add_control(
-            new WP_Customize_Color_Control(
-                $wp_customize,
-                'styling_color_primary',
-                array(
-                    'label'      => esc_html__( 'Primary Color', 'boston' ),
-                    'section'    => 'styling',
-                )
-            )
-        );
 
 
         /**
