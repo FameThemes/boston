@@ -5,6 +5,19 @@
  * @package Boston
  */
 
+/**
+ * @see WP_Error
+ *
+ * @param $validity
+ * @param $value
+ * @return mixed
+ */
+function boston_upgrade_pro_notice( $validity, $value ){
+    if ( $value == 'slider' ) {
+        $validity->add( 'notice', esc_html__( 'Upgrade to Boston Pro to display featured content as a slider.' ) );
+    }
+    return $validity;
+}
 
 /**
  * Add postMessage support for site title and description for the Theme Customizer.
@@ -48,6 +61,26 @@ function boston_customize_register( $wp_customize ) {
             'description' => esc_html__( 'Easily feature all posts with the "featured" tag or a tag of your choice.', 'boston' ),
         )
     );
+
+        $wp_customize->add_setting( 'featured_display', array(
+            'sanitize_callback' => 'sanitize_text_field',
+            'default' => 'carousel',
+            //'transport' => 'postMessage',
+            'validate_callback' => 'boston_upgrade_pro_notice'
+        ) );
+
+        $wp_customize->add_control(
+            'featured_display',
+            array(
+                'type'       => 'select',
+                'label'      => esc_html__( 'Display', 'boston-pro' ),
+                'section'    => 'featured_section',
+                'choices' => array(
+                    'carousel' => esc_html__( 'Carousel', 'boston' ),
+                    'slider' => esc_html__( 'Slider', 'boston' ),
+                )
+            )
+        );
 
         $wp_customize->add_setting( 'featured_tags', array(
             'sanitize_callback' => 'sanitize_text_field',
