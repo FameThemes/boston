@@ -8,7 +8,6 @@
 	ul {
 		display: none;
 	}
-
 	@include media-breakpoint-up(lg) {
 		ul {
 			display: none;
@@ -117,7 +116,7 @@
 		}
 	}
 
-	@include media-breakpoint-down(lg) {
+	@include media-breakpoint-down(md) {
 		width: 100%;
 		position: relative;
 		ul {
