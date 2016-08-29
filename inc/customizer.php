@@ -19,6 +19,14 @@ function boston_upgrade_pro_notice( $validity, $value ){
     return $validity;
 }
 
+function boston_sanitize_checkbox( $input ){
+    if ( $input == 1 || $input == 'true' || $input === true ) {
+        return 1;
+    } else {
+        return 0;
+    }
+}
+
 /**
  * Add postMessage support for site title and description for the Theme Customizer.
  *
@@ -97,7 +105,7 @@ function boston_customize_register( $wp_customize ) {
         );
 
         $wp_customize->add_setting( 'featured_number', array(
-            'sanitize_callback' => 'sanitize_text_field',
+            'sanitize_callback' => 'absint',
             'default' => 10,
         ) );
 
@@ -111,7 +119,7 @@ function boston_customize_register( $wp_customize ) {
         );
 
         $wp_customize->add_setting( 'featured_hide_tag', array(
-            'sanitize_callback' => 'sanitize_text_field',
+            'sanitize_callback' => 'boston_sanitize_checkbox',
             'default' => 1,
         ) );
 
@@ -125,7 +133,7 @@ function boston_customize_register( $wp_customize ) {
         );
 
         $wp_customize->add_setting( 'featured_thumb_only', array(
-            'sanitize_callback' => 'sanitize_text_field',
+            'sanitize_callback' => 'boston_sanitize_checkbox',
             'default' => 1,
         ) );
 
