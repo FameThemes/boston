@@ -19,14 +19,6 @@ function boston_upgrade_pro_notice( $validity, $value ){
     return $validity;
 }
 
-function boston_sanitize_checkbox( $input ){
-    if ( $input == 1 || $input == 'true' || $input === true ) {
-        return 1;
-    } else {
-        return 0;
-    }
-}
-
 /**
  * Add postMessage support for site title and description for the Theme Customizer.
  *
@@ -71,7 +63,7 @@ function boston_customize_register( $wp_customize ) {
     );
 
         $wp_customize->add_setting( 'featured_display', array(
-            'sanitize_callback' => 'sanitize_text_field',
+            'sanitize_callback' => 'boston_sanitize_sanitize_select',
             'default' => 'carousel',
             //'transport' => 'postMessage',
             'validate_callback' => 'boston_upgrade_pro_notice'
@@ -105,7 +97,7 @@ function boston_customize_register( $wp_customize ) {
         );
 
         $wp_customize->add_setting( 'featured_number', array(
-            'sanitize_callback' => 'absint',
+            'sanitize_callback' => 'boston_sanitize_absint',
             'default' => 10,
         ) );
 
@@ -155,7 +147,7 @@ function boston_customize_register( $wp_customize ) {
     );
 
     $wp_customize->add_setting( 'archive_layout', array(
-        'sanitize_callback' => 'sanitize_text_field',
+        'sanitize_callback' => 'boston_sanitize_sanitize_select',
         'default' => 'layout_1',
     ) );
 
@@ -241,10 +233,37 @@ function boston_customize_register( $wp_customize ) {
                 )
             );
 
-
-
 }
 add_action( 'customize_register', 'boston_customize_register' );
+
+
+function boston_sanitize_checkbox( $input ){
+    if ( $input == 1 || $input == 'true' || $input === true ) {
+        return 1;
+    } else {
+        return 0;
+    }
+}
+
+function boston_sanitize_absint( $number, $setting ) {
+    // Ensure $number is an absolute integer (whole number, zero or greater).
+    $number = absint( $number );
+
+    // If the input is an absolute integer, return it; otherwise, return the default
+    return ( $number ? $number : $setting->default );
+}
+
+
+function boston_sanitize_sanitize_select( $input, $setting ) {
+    // Ensure input is a slug.
+    $input = sanitize_key( $input );
+
+    // Get list of choices from the control associated with the setting.
+    $choices = $setting->manager->get_control( $setting->id )->choices;
+
+    // If the input is a valid key, return it; otherwise, return the default.
+    return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
+}
 
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
