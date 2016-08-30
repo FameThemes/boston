@@ -8,7 +8,7 @@ if ( ! function_exists( 'boston_theme_info' ) ) {
     function boston_theme_info()
     {
         $theme_data = wp_get_theme();
-        add_theme_page(sprintf(esc_html__('%s Theme Dashboard', 'boston'), $theme_data->Name), sprintf(esc_html__('%s', 'boston'), $theme_data->Name), 'edit_theme_options', 'boston', 'boston_theme_info_page');
+        add_theme_page(sprintf(esc_html__('%s Theme Dashboard', 'boston'), $theme_data->Name), sprintf(esc_html__('%s theme', 'boston'), $theme_data->Name), 'edit_theme_options', 'boston', 'boston_theme_info_page');
     }
 }
 
@@ -36,10 +36,10 @@ if ( ! function_exists( 'boston_theme_info_page' ) ) {
             <div
                 class="about-text"><?php esc_html_e('Whether you’re looking to share your own thoughts, write about your latest findings, Boston WordPress theme is designed to fulfill these and a lot more.', 'boston') ?></div>
             <a target="_blank" href="<?php echo esc_url('http://www.famethemes.com/?utm_source=theme_dashboard_page&utm_medium=badge_link&utm_campaign=theme_admin'); ?>"
-               class="famethemes-badge wp-badge"><span><?php _e('FameThemes', 'boston'); ?></span></a>
+               class="famethemes-badge wp-badge"><span><?php esc_html('FameThemes', 'boston'); ?></span></a>
 
             <h2 class="nav-tab-wrapper">
-                <a href="?page=ft_codilight_lite" class="nav-tab nav-tab-active"><?php echo esc_html($theme_data->Name); ?></a>
+                <a href="<?php echo esc_url( add_query_arg( array( 'page'=>'boston' ), admin_url( 'themes.php' ) ) ); ?>" class="nav-tab nav-tab-active"><?php echo esc_html($theme_data->Name); ?></a>
             </h2>
 
             <div class="theme_info">
@@ -64,10 +64,12 @@ if ( ! function_exists( 'boston_theme_info_page' ) ) {
                             </p>
                         </div>
                         <div class="theme_link">
-                            <h3><?php esc_html_e( 'Having Trouble, Need Support?', 'boston' ); ?></h3>
+                            <h3><?php esc_html_e('Having Trouble, Need Support?', 'boston'); ?></h3>
+
                             <p class="about"><?php printf(esc_html__('Support for %s WordPress theme is conducted through FameThemes support ticket system.', 'boston'), $theme_data->Name); ?></p>
+
                             <p>
-                                <a href="<?php echo esc_url('https://www.famethemes.com/dashboard/tickets/' ); ?>" target="_blank" class="button button-secondary"><?php echo sprintf( esc_html('Create a support ticket', 'boston'), $theme_data->Name); ?></a>
+                                <a class="button button-secondary" target="_blank" href="https://www.famethemes.com/dashboard/tickets/"><?php esc_html_e( 'Create a support ticket', 'boston' ) ?></a>
                             </p>
                         </div>
                     </div>
