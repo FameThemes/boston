@@ -87,7 +87,7 @@ function boston_customize_register( $wp_customize ) {
             'featured_display',
             array(
                 'type'       => 'select',
-                'label'      => esc_html__( 'Display', 'boston-pro' ),
+                'label'      => esc_html__( 'Display', 'boston' ),
                 'section'    => 'featured_section',
                 'choices' => array(
                     'carousel' => esc_html__( 'Carousel', 'boston' ),
@@ -209,7 +209,9 @@ function boston_customize_register( $wp_customize ) {
         )
     );
 
-        $wp_customize->add_setting( 'boston_pro_features', array() );
+        $wp_customize->add_setting( 'boston_pro_features', array(
+            'sanitize_callback' => 'sanitize_text_field',
+        ) );
         $wp_customize->add_control(
             new Boston_Customize_Pro_Control(
                 $wp_customize,
@@ -221,7 +223,9 @@ function boston_customize_register( $wp_customize ) {
                 )
             )
         );
-        $wp_customize->add_setting( 'boston_pro_links', array() );
+        $wp_customize->add_setting( 'boston_pro_links', array(
+            'sanitize_callback' => 'sanitize_text_field',
+        ) );
         $wp_customize->add_control(
             new Boston_Customize_Pro_Control(
                 $wp_customize,
@@ -237,7 +241,7 @@ add_action( 'customize_register', 'boston_customize_register' );
 
 function boston_upgrade_pro_notice( $validity, $value ){
     if ( $value == 'slider' ) {
-        $validity->add( 'notice', esc_html__( 'Upgrade to Boston Pro to display featured content as a slider.' ) );
+        $validity->add( 'notice', esc_html__( 'Upgrade to Boston Pro to display featured content as a slider.', 'boston' ) );
     }
     return $validity;
 }
