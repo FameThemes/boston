@@ -46,10 +46,10 @@ class Boston_Customize_Pro_Control extends WP_Customize_Control {
     public $type = 'boston_pro';
     function render_content(){
         if ( ! empty( $this->label ) ) : ?>
-            <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+            <span class="customize-control-title boston-pro-title"><?php echo esc_html( $this->label ); ?></span>
         <?php endif;
         if ( ! empty( $this->description ) ) : ?>
-            <div class="description customize-control-description"><?php echo $this->description ; ?></div>
+            <div class="description customize-control-description boston-pro-description"><?php echo $this->description ; ?></div>
         <?php endif; ?>
         <?php
 

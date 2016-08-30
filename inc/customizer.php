@@ -6,20 +6,6 @@
  */
 
 /**
- * @see WP_Error
- *
- * @param $validity
- * @param $value
- * @return mixed
- */
-function boston_upgrade_pro_notice( $validity, $value ){
-    if ( $value == 'slider' ) {
-        $validity->add( 'notice', esc_html__( 'Upgrade to Boston Pro to display featured content as a slider.' ) );
-    }
-    return $validity;
-}
-
-/**
  * Add postMessage support for site title and description for the Theme Customizer.
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
@@ -33,15 +19,42 @@ function boston_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 
-
     /*------------------------------------------------------------------------*/
-
     $wp_customize->add_panel( 'theme_options' ,
         array(
             'title'       => esc_html__( 'Theme Options', 'boston' ),
             'description' => ''
         )
     );
+
+    /**
+     * Theme Styling
+     */
+    $wp_customize->add_section( 'styling' ,
+        array(
+            'title'       => esc_html__( 'Styling', 'boston' ),
+            'description' => '',
+            'panel'       => 'theme_options',
+            'piority'     => 5
+        )
+    );
+
+        $wp_customize->add_setting( 'styling_color_primary', array(
+            'default'              => '#d65456',
+            'sanitize_callback'    => 'sanitize_hex_color_no_hash',
+            'sanitize_js_callback' => 'maybe_hash_hex_color',
+        ) );
+
+        $wp_customize->add_control(
+            new WP_Customize_Color_Control(
+                $wp_customize,
+                'styling_color_primary',
+                array(
+                    'label'      => esc_html__( 'Primary Color', 'boston' ),
+                    'section'    => 'styling',
+                )
+            )
+        );
 
     /**
      * Featured Content
@@ -59,6 +72,7 @@ function boston_customize_register( $wp_customize ) {
             'panel'       => 'theme_options',
             'title'       => esc_html__( 'Featured Content', 'boston' ),
             'description' => esc_html__( 'Easily feature all posts with the "featured" tag or a tag of your choice.', 'boston' ),
+            'piority'     => 7
         )
     );
 
@@ -138,104 +152,95 @@ function boston_customize_register( $wp_customize ) {
             )
         );
 
-    $wp_customize->add_section( 'archive_section' ,
+
+    $wp_customize->add_section( 'articles_listing_section' ,
         array(
             'panel'       => 'theme_options',
-            'title'       => esc_html__( 'Archive Content', 'boston' ),
-            'description' => esc_html__( 'Select archive content layout to display.', 'boston' ),
+            'title'       => esc_html__( 'Articles Listing Layout', 'boston' ),
+            'piority'     => 9
         )
     );
 
-    $wp_customize->add_setting( 'archive_layout', array(
-        'sanitize_callback' => 'boston_sanitize_sanitize_select',
+
+    $wp_customize->add_setting( 'articles_listing_layout', array(
+        'sanitize_callback' => 'sanitize_text_field',
         'default' => 'layout_1',
     ) );
 
     $wp_customize->add_control(
        new Boston_Customize_Radio_Image_Control(
            $wp_customize,
-           'archive_layout',
+           'articles_listing_layout',
            array(
                'choices'     =>array(
                    'layout_1' =>  array(
-                       'img' => get_template_directory_uri() . '/assets/images/layout1.png',
+                       'img'   => get_template_directory_uri() . '/assets/images/layout1.png',
                        'label' => esc_html__( 'Layout 1', 'boston' ),
                    ),
                    'layout_2' =>  array(
-                       'img' => get_template_directory_uri() . '/assets/images/layout2.png',
+                       'img'   => get_template_directory_uri() . '/assets/images/layout2.png',
                        'label' => esc_html__( 'Layout 2', 'boston' ),
-                       'pro' => true,
-                       'link' => 'https://www.famethemes.com/themes/boston-pro/'
+                       'pro'   => true,
+                       'link'  => 'https://www.famethemes.com/themes/boston-pro/'
                    ),
                    'layout_3' =>  array(
-                       'img' => get_template_directory_uri() . '/assets/images/layout3.png',
+                       'img'   => get_template_directory_uri() . '/assets/images/layout3.png',
                        'label' => esc_html__( 'Layout 3', 'boston' ),
-                       'pro' => true,
-                       'link' => 'https://www.famethemes.com/themes/boston-pro/'
+                       'pro'   => true,
+                       'link'  => 'https://www.famethemes.com/themes/boston-pro/'
                    ),
                    'layout_4' =>  array(
-                       'img' => get_template_directory_uri() . '/assets/images/layout4.png',
+                       'img'   => get_template_directory_uri() . '/assets/images/layout4.png',
                        'label' => esc_html__( 'Layout 4', 'boston' ),
-                       'pro' => true,
-                       'link' => 'https://www.famethemes.com/themes/boston-pro/'
+                       'pro'   => true,
+                       'link'  => 'https://www.famethemes.com/themes/boston-pro/'
                    ),
                ),
                'label'      => esc_html__( 'Homepage articles listing layout', 'boston' ),
-               'section'    => 'archive_section',
+               'section'    => 'articles_listing_section',
            )
        )
     );
 
-
-
-    /**
-     * Theme Color
-     */
-    $wp_customize->add_setting( 'styling_color_primary', array(
-        'default'     => '#d65456',
-        'sanitize_callback' => 'sanitize_hex_color_no_hash',
-        'sanitize_js_callback' => 'maybe_hash_hex_color',
-    ) );
-
-    $wp_customize->add_control(
-        new WP_Customize_Color_Control(
-            $wp_customize,
-            'styling_color_primary',
-            array(
-                'label'      => esc_html__( 'Primary Color', 'boston' ),
-                'section'    => 'colors',
-                'priority' => 5
-            )
+    $wp_customize->add_section( 'boston_pro' ,
+        array(
+            'title'       => esc_html__( 'Upgrade to Boston Pro', 'boston' ),
+            'description' => '',
         )
     );
 
-
-        /**
-         * Theme boston-pro
-         */
-        $wp_customize->add_section( 'boston_pro' ,
-            array(
-                'title'       => esc_html__( 'Boston Pro', 'boston' ),
-                'description' => '',
+        $wp_customize->add_setting( 'boston_pro_features', array() );
+        $wp_customize->add_control(
+            new Boston_Customize_Pro_Control(
+                $wp_customize,
+                'boston_pro_features',
+                array(
+                    'label'      => esc_html__( 'Boston Pro Features', 'boston' ),
+                    'description'   => '<span>Featured content slider (<a target="_blank" href="http://demos.famethemes.com/boston-pro/?featured_type=slider">Demo</a>)</span><span>4 Article Listing Layout</span><span>600+ Google Fonts</span><span>Social Media Icons</span><span>Custom Posts Widget</span><span>Instagram Feed Widget</span><span>Instagram Feed Before Footer</span><span>4 Footer Widget Area</span><span>Footer Copyright Editor</span><span>Remove Footer Link via Customizer</span><span>... and much more </span>',
+                    'section'    => 'boston_pro',
+                )
             )
         );
-
-            $wp_customize->add_setting( 'boston_pro', array() );
-            $wp_customize->add_control(
-                new Boston_Customize_Pro_Control(
-                    $wp_customize,
-                    'boston_pro',
-                    array(
-                        'label'      => esc_html__( 'Boston Pro', 'boston' ),
-                        'description'   => esc_html__( 'Something about Boston Pro description', 'boston' ),
-                        'section'    => 'boston_pro',
-                    )
+        $wp_customize->add_setting( 'boston_pro_links', array() );
+        $wp_customize->add_control(
+            new Boston_Customize_Pro_Control(
+                $wp_customize,
+                'boston_pro_links',
+                array(
+                    'description'   => '<a target="_blank" class="boston-pro-buy-button" href="https://www.famethemes.com/themes/boston-pro/">Buy Now</a>', 'boston',
+                    'section'    => 'boston_pro',
                 )
-            );
-
+            )
+        );
 }
 add_action( 'customize_register', 'boston_customize_register' );
 
+function boston_upgrade_pro_notice( $validity, $value ){
+    if ( $value == 'slider' ) {
+        $validity->add( 'notice', esc_html__( 'Upgrade to Boston Pro to display featured content as a slider.' ) );
+    }
+    return $validity;
+}
 
 function boston_sanitize_checkbox( $input ){
     if ( $input == 1 || $input == 'true' || $input === true ) {
