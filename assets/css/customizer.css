@@ -1,0 +1,96 @@
+.customize-control-radio-image .choices input{
+    display: none;
+}
+.customize-control-radio-image .choices:after {
+    clear: both; content: " "; display: block;
+}
+.customize-control-radio-image .choices * {
+    box-sizing: border-box;
+}
+.customize-control-radio-image .choices .col {
+    width: 48%;
+    margin-right: 0;
+    float: left;
+    margin-top: 16px;
+
+}
+.customize-control-radio-image .choices .col:nth-of-type(odd) {
+    margin-right: 4%;
+}
+.customize-control-radio-image .choices label,
+.customize-control-radio-image .choices a {
+    display: block;
+    position: relative;
+    line-height: 1;
+}
+.customize-control-radio-image .choices .pro-item {
+    cursor: pointer;
+}
+.choice-item .pr{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: #f50000;
+    color: #ffffff;
+    text-transform: uppercase;
+    padding: 2px 5px;
+    font-size: 10px;
+}
+.customize-control-radio-image .choices img {
+    max-width: 100%;
+    height: auto;
+    border: 3px solid #DDDDDD;
+    line-height: 1;
+}
+
+.customize-control-radio-image .choices input:checked ~ img {
+    border-color: #347dca;
+}
+
+
+/* Pro panel */
+#accordion-section-boston_pro .accordion-section-title,
+#accordion-section-boston_pro .accordion-section-title::before,
+#accordion-section-boston_pro .accordion-section-title:hover {
+    background: #d54e21 !important;
+    color: #ffffff !important;
+}
+#accordion-section-boston_pro .accordion-section-title::after {
+    color: #FFFFFF;
+}
+
+.boston-pro-title {
+    margin-bottom: 20px;
+}
+
+.boston-pro-description span {
+    display: block;
+    margin-top: 7px;
+}
+
+.boston-pro-description span:before {
+    content: "\f147";
+    color: #7ac143;
+    display: inline-block;
+    font: 400 20px/17px dashicons;
+    margin: 3px 4px 3px 0;
+    vertical-align: top;
+}
+
+.boston-pro-description .boston-pro-buy-button{
+    background: #7ac143 none repeat scroll 0 0;
+    border-radius: 3px;
+    color: #ffffff;
+    display: block;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 100;
+    letter-spacing: 2px;
+    margin-top: 10px;
+    padding: 12px 20px;
+    text-align: center;
+    text-transform: uppercase;
+}
+.boston-pro-description .boston-pro-buy-button:hover {
+    background: #90D75A;
+}

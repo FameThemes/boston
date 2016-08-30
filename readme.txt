@@ -45,6 +45,13 @@ Boston includes support for Tiled Galleries in Jetpack.
 * Image use in screenshot: https://www.pexels.com/photo/man-suit-flowers-petals-94289/. [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
 
 == Changelog ==
+
+= 1.0.8 =
+* Improve responsive css codes.
+* Fix navigation issue on table.
+
+
+
 = 1.0.7 =
 * Add styling settings.
 * Add featured content settings.
