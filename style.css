@@ -744,7 +744,7 @@ textarea {
 	}
 }
 
-.full-width .content-area {
+.full-width .content-area, .page-template-full-width-page .content-area {
 	width: 100%;
 	max-width: 100%;
 }
