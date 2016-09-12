@@ -777,6 +777,18 @@ textarea {
 	}
 }
 
+@media (min-width: 768px) {
+	.left-layout .content-area {
+		float: right;
+	}
+}
+
+@media (min-width: 768px) {
+	.left-layout .sidebar {
+		float: left;
+	}
+}
+
 /* Site Topbar */
 .site-topbar {
 	height: 52px;

@@ -40,6 +40,19 @@
         float: right;
     }
 }
+.left-layout {
+    .content-area {
+        @include media-breakpoint-up(md) {
+            float: right;
+        }
+    }
+    .sidebar {
+        @include media-breakpoint-up(md) {
+            float: left;
+        }
+    }
+
+}
 
 /* Site Topbar */
 .site-topbar {
