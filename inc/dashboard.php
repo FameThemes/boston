@@ -28,7 +28,16 @@ add_action('admin_enqueue_scripts', 'boston_admin_scripts');
 if ( ! function_exists( 'boston_theme_info_page' ) ) {
     function boston_theme_info_page()
     {
-        $theme_data = wp_get_theme(); ?>
+        $theme_data = wp_get_theme();
+        // Check for current viewing tab
+        $tab = null;
+        if ( isset( $_GET['tab'] ) ) {
+            $tab = $_GET['tab'];
+        } else {
+            $tab = null;
+        }
+
+        ?>
 
         <div class="wrap about-wrap theme_info_wrapper">
             <h1><?php printf(esc_html__('Welcome to %1s - Version %2s', 'boston'), $theme_data->Name, $theme_data->Version); ?></h1>
@@ -39,9 +48,11 @@ if ( ! function_exists( 'boston_theme_info_page' ) ) {
                class="famethemes-badge wp-badge"><span><?php esc_html('FameThemes', 'boston'); ?></span></a>
 
             <h2 class="nav-tab-wrapper">
-                <a href="<?php echo esc_url( add_query_arg( array( 'page'=>'boston' ), admin_url( 'themes.php' ) ) ); ?>" class="nav-tab nav-tab-active"><?php echo esc_html($theme_data->Name); ?></a>
+                <a href="<?php echo esc_url( add_query_arg( array( 'page'=>'boston' ), admin_url( 'themes.php' ) ) ); ?>" class="nav-tab <?php echo ( ! $tab || $tab == 'boston' ) ? ' nav-tab-active' : ''; ?>"><?php echo esc_html($theme_data->Name); ?></a>
+                <a href="<?php echo esc_url( add_query_arg( array( 'page'=>'boston', 'tab' => 'demo-data-importer' ), admin_url( 'themes.php' ) ) ); ?>" class="nav-tab<?php echo $tab == 'demo-data-importer' ? ' nav-tab-active' : null; ?>"><?php esc_html_e( 'One Click Demo Import', 'boston' ); ?></span></a>
             </h2>
 
+            <?php if ( is_null( $tab ) ) { ?>
             <div class="theme_info">
                 <div class="theme_info_column clearfix">
                     <div class="theme_info_left">
@@ -79,6 +90,19 @@ if ( ! function_exists( 'boston_theme_info_page' ) ) {
                     </div>
                 </div>
             </div>
+            <?php } ?>
+
+            <?php if ( $tab == 'demo-data-importer' ) { ?>
+                <div class="demo-import-tab-content info-tab-content">
+                    <?php if ( has_action( 'boston_demo_import_content_tab' ) ) {
+                        do_action( 'boston_demo_import_content_tab' );
+                    } else { ?>
+                        <div class="demo-import-boxed">
+                            <p><?php  printf( __( '<b>Hey,</b> you will need to install and activate the FameThemes Demo Importer plugin first, %s now from Github.', 'boston' ) , '<a href="https://github.com/FameThemes/famethemes-demo-importer/archive/master.zip">'. esc_html__( 'download it', 'boston' ) .'</a>' ); ?></p>
+                        </div>
+                    <?php } ?>
+                </div>
+            <?php } ?>
 
         </div> <!-- END .theme_info -->
         <?php
