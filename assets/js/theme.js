@@ -153,5 +153,6 @@ jQuery( document ).ready( function(){
 		itemsDesktop: 2,
 		itemsDesktopSmall: [979,2],
 		paginationNumbers: false,
+		rtl:true
 	} )
 } );

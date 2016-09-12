@@ -51,7 +51,6 @@
             float: left;
         }
     }
-
 }
 
 /* Site Topbar */
@@ -171,8 +170,14 @@
     }
     .site-info {
         float: left;
+        @include media-breakpoint-down(sm) {
+            float: none !important;
+        }
     }
     .theme-info {
         float: right;
+        @include media-breakpoint-down(sm) {
+            float: !important;
+        }
     }
 }

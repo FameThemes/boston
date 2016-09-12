@@ -936,8 +936,20 @@ textarea {
 	float: left;
 }
 
+@media (max-width: 767px) {
+	.site-footer .site-info {
+		float: none !important;
+	}
+}
+
 .site-footer .theme-info {
 	float: right;
+}
+
+@media (max-width: 767px) {
+	.site-footer .theme-info {
+		float: !important;
+	}
 }
 
 /*--------------------------------------------------------------
