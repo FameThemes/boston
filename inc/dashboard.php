@@ -98,7 +98,7 @@ if ( ! function_exists( 'boston_theme_info_page' ) ) {
                         do_action( 'boston_demo_import_content_tab' );
                     } else { ?>
                         <div class="demo-import-boxed">
-                            <p><?php  printf( __( '<b>Hey,</b> you will need to install and activate the FameThemes Demo Importer plugin first, %s now from Github.', 'boston' ) , '<a href="https://github.com/FameThemes/famethemes-demo-importer/archive/master.zip">'. esc_html__( 'download it', 'boston' ) .'</a>' ); ?></p>
+                            <b>Hey,</b> you will need to install and activate the FameThemes Demo Importer plugin first, <a href="https://github.com/FameThemes/famethemes-demo-importer/archive/master.zip">download it</a> now from Github.
                         </div>
                     <?php } ?>
                 </div>
