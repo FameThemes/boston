@@ -177,7 +177,7 @@
     .theme-info {
         float: right;
         @include media-breakpoint-down(sm) {
-            float: !important;
+            float: none !important;
         }
     }
 }

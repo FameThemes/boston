@@ -948,7 +948,7 @@ textarea {
 
 @media (max-width: 767px) {
 	.site-footer .theme-info {
-		float: !important;
+		float: none !important;
 	}
 }
 
