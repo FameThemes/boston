@@ -47,10 +47,15 @@ Boston includes support for Tiled Galleries in Jetpack.
 == Changelog ==
 
 = 1.0.8 =
+* Theme dashboard contribute tab
+* Demo content text + tab
+* Layout settings.
+* RTL support.
+* Improve theme tags.
+
+= 1.0.8 =
 * Improve responsive css codes.
 * Fix navigation issue on table.
-
-
 
 = 1.0.7 =
 * Add styling settings.
