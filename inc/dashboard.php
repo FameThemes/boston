@@ -64,16 +64,7 @@ if ( ! function_exists( 'boston_theme_info_page' ) ) {
                             <p class="about"><?php printf(esc_html__('%s supports the Theme Customizer for all theme settings. Click "Customize" to start customize your site.', 'boston'), $theme_data->Name); ?></p>
 
                             <p>
-                                <a href="<?php echo esc_url(admin_url('customize.php')); ?>" class="button button-primary"><?php esc_html_e('Start Customize', 'boston'); ?></a>
-                            </p>
-                        </div>
-                        <div class="theme_link">
-                            <h3><?php esc_html_e('Theme Documentation', 'boston'); ?></h3>
-
-                            <p class="about"><?php printf(esc_html__('Need any help to setup and configure %s? Please have a look at our documentations instructions.', 'boston'), $theme_data->Name); ?></p>
-
-                            <p>
-                                <a href="http://docs.famethemes.com/category/83-boston" target="_blank" class="button button-secondary"><?php esc_html_e('Online Documentation', 'boston'); ?></a>
+                                <a href="<?php echo esc_url(admin_url('customize.php')); ?>" class="button button-secondary"><?php esc_html_e('Start Customize', 'boston'); ?> &#8594;</a>
                             </p>
                         </div>
                         <div class="theme_link">
@@ -82,7 +73,18 @@ if ( ! function_exists( 'boston_theme_info_page' ) ) {
                             <p class="about"><?php printf(esc_html__('Support for %s WordPress theme is conducted through FameThemes support ticket system.', 'boston'), $theme_data->Name); ?></p>
 
                             <p>
-                                <a class="button button-secondary" target="_blank" href="https://www.famethemes.com/contact"><?php esc_html_e( 'Create a support ticket', 'boston' ) ?></a>
+                                <a class="button button-secondary" target="_blank" href="https://www.famethemes.com/contact"><?php esc_html_e( 'Create a support ticket', 'boston' ) ?></a>&nbsp;
+                                <a href="http://docs.famethemes.com/category/83-boston" target="_blank" class="button button-secondary"><?php esc_html_e('Boston Documentation', 'boston'); ?></a>
+                            </p>
+                        </div>
+                        <div class="theme_link">
+                            <h3 class="boston-upgrade"><?php esc_html_e('Upgrade to Boston Pro', 'boston'); ?></h3>
+
+                            <p class="about"><?php printf(esc_html__('Our #1 blogging WordPress theme with premium features designed for bloggers and content lovers.', 'boston'), $theme_data->Name); ?></p>
+
+                            <p>
+                                <a class="button button-secondary" target="_blank" href="http://demos.famethemes.com/boston-pro"><?php _e( 'Boston Pro Demo', 'boston' ) ?> &#8594;</a>&nbsp;
+                                <a class="button button-primary" target="_blank" href="https://www.famethemes.com/themes/boston-pro"><?php _e( 'Upgrade Now', 'boston' ) ?> &#8594;</a>
                             </p>
                         </div>
                     </div>
