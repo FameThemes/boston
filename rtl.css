@@ -89,14 +89,43 @@
 .comment-navigation .nav-previous,
 .posts-navigation .nav-previous,
 .post-navigation .nav-previous {
-	float: left;
+	float: right;
 }
 
 .comment-navigation .nav-next,
 .posts-navigation .nav-next,
 .post-navigation .nav-next {
+	float: left;
+	text-align: left;
+}
+
+.comment-navigation .nav-previous a:before, .comment-navigation .nav-next a:after,
+.posts-navigation .nav-previous a:before,
+.posts-navigation .nav-next a:after,
+.post-navigation .nav-previous a:before,
+.post-navigation .nav-next a:after {
+	content: '\f429';
+	margin-right: 0px;
+	margin-left: 3px;
+}
+
+.comment-navigation .nav-previous a:before,
+.posts-navigation .nav-previous a:before,
+.post-navigation .nav-previous a:before {
+	right: auto;
+	left: 0px;
 	float: right;
-	text-align: right;
+}
+
+.comment-navigation .nav-next a:after,
+.posts-navigation .nav-next a:after,
+.post-navigation .nav-next a:after {
+	content: '\f430';
+	margin-right: 3px;
+	margin-left: 0px;
+	right: auto;
+	left: 0px;
+	float: left;
 }
 
 .posts-navigation .nav-previous a:before, .posts-navigation .nav-next a:after {

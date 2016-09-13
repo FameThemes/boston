@@ -109,13 +109,34 @@
 .posts-navigation,
 .post-navigation {
 	.nav-previous {
+		float: right;
+	}
+	.nav-next {
 		float: left;
+		text-align: left;
 	}
 
-	.nav-next {
-		float: right;
-		text-align: right;
-	}
+    .nav-previous a:before, .nav-next a:after {
+        content: '\f429';
+        margin-right: 0px;
+        margin-left: 3px;
+    }
+    .nav-previous a:before {
+        right: auto;
+        left: 0px;
+        float: right;
+    }
+    .nav-next a:after {
+        content: '\f430';
+        margin-right: 3px;
+        margin-left: 0px;
+        right: auto;
+        left: 0px;
+        float: left;
+    }
+
+
+
 }
 
 .posts-navigation {
