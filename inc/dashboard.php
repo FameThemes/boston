@@ -45,11 +45,13 @@ if ( ! function_exists( 'boston_theme_info_page' ) ) {
             <div
                 class="about-text"><?php esc_html_e('Whether you’re looking to share your own thoughts, write about your latest findings, Boston WordPress theme is designed to fulfill these and a lot more.', 'boston') ?></div>
             <a target="_blank" href="<?php echo esc_url('http://www.famethemes.com/?utm_source=theme_dashboard_page&utm_medium=badge_link&utm_campaign=theme_admin'); ?>"
-               class="famethemes-badge wp-badge"><span><?php esc_html('FameThemes', 'boston'); ?></span></a>
+               class="famethemes-badge wp-badge"><span><?php echo esc_html('FameThemes', 'boston'); ?></span></a>
 
             <h2 class="nav-tab-wrapper">
                 <a href="<?php echo esc_url( add_query_arg( array( 'page'=>'boston' ), admin_url( 'themes.php' ) ) ); ?>" class="nav-tab <?php echo ( ! $tab || $tab == 'boston' ) ? ' nav-tab-active' : ''; ?>"><?php echo esc_html($theme_data->Name); ?></a>
                 <a href="<?php echo esc_url( add_query_arg( array( 'page'=>'boston', 'tab' => 'demo-data-importer' ), admin_url( 'themes.php' ) ) ); ?>" class="nav-tab<?php echo $tab == 'demo-data-importer' ? ' nav-tab-active' : null; ?>"><?php esc_html_e( 'One Click Demo Import', 'boston' ); ?></span></a>
+
+                <a href="<?php echo esc_url( add_query_arg( array( 'page'=>'boston', 'tab' => 'contribute' ), admin_url( 'themes.php' ) ) ); ?>" class="nav-tab<?php echo $tab == 'contribute' ? ' nav-tab-active' : null; ?>"><?php esc_html_e( 'Contribute', 'boston' ); ?><span class="dashicons dashicons-thumbs-up"></span></a>
             </h2>
 
             <?php if ( is_null( $tab ) ) { ?>
@@ -80,7 +82,7 @@ if ( ! function_exists( 'boston_theme_info_page' ) ) {
                             <p class="about"><?php printf(esc_html__('Support for %s WordPress theme is conducted through FameThemes support ticket system.', 'boston'), $theme_data->Name); ?></p>
 
                             <p>
-                                <a class="button button-secondary" target="_blank" href="https://www.famethemes.com/dashboard/tickets/"><?php esc_html_e( 'Create a support ticket', 'boston' ) ?></a>
+                                <a class="button button-secondary" target="_blank" href="https://www.famethemes.com/contact"><?php esc_html_e( 'Create a support ticket', 'boston' ) ?></a>
                             </p>
                         </div>
                     </div>
@@ -103,6 +105,37 @@ if ( ! function_exists( 'boston_theme_info_page' ) ) {
                     <?php } ?>
                 </div>
             <?php } ?>
+
+            <?php if ( $tab == 'contribute' ) { ?>
+            <div class="contribute-tab-content feature-section three-col">
+                <h2>How can I contribute?</h2>
+                <div class="col">
+                    <div class="theme_info_boxed">
+                        <p><strong><?php esc_html_e( 'Found a bug? Want to contribute with a fix or create a new feature?', 'boston' ); ?></strong></p>
+                        <p><?php esc_html_e('GitHub is the place to go!', 'boston'); ?></p>
+                        <p>
+                            <a href="https://github.com/FameThemes/boston" target="_blank" class="button button-primary"><?php esc_html_e('Boston on GitHub', 'boston'); ?> <span class="dashicons dashicons-external"></span></a>
+                        </p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="theme_info_boxed">
+                        <p><strong><?php esc_html_e( 'Are you a polyglot? Want to translate Boston into your own language?', 'boston' ); ?></strong></p>
+                        <p><?php esc_html_e('Get involved at WordPress.org.', 'boston'); ?></p>
+                        <p>
+                            <a href="https://translate.wordpress.org/projects/wp-themes/boston" target="_blank" class="button button-primary"><?php esc_html_e('Translate Boston', 'boston'); ?> <span class="dashicons dashicons-external"></span></a>
+                        </p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="theme_info_boxed">
+                        <p><strong><?php esc_html_e( 'Are you enjoying Boston theme?', 'boston' ); ?></strong></p>
+                        <p><?php _e('Rate our theme on <a target="_blank" href="https://wordpress.org/support/theme/boston/reviews/?filter=5#postform">WordPress.org</a>. We\'d really appreciate it!', 'boston'); ?></p>
+                        <p><span class="dashicons dashicons-star-filled"></span><span class="dashicons dashicons-star-filled"></span><span class="dashicons dashicons-star-filled"></span><span class="dashicons dashicons-star-filled"></span><span class="dashicons dashicons-star-filled"></span></p>
+                    </div>
+                </div>
+            </div>
+        <?php } ?>
 
         </div> <!-- END .theme_info -->
         <?php
