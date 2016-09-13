@@ -102,7 +102,7 @@ if ( ! function_exists( 'boston_theme_info_page' ) ) {
                         do_action( 'boston_demo_import_content_tab' );
                     } else { ?>
                         <div class="demo-import-boxed">
-                            <p><?php  printf( esc_html__( ' %1$s you will need to install and activate the FameThemes Demo Importer plugin first, %2$s now from Github.', 'boston' ) , '<b>'.esc_html__( 'Hey,', 'boston').'</b>', '<a href="https://github.com/FameThemes/famethemes-demo-importer/archive/master.zip">'. esc_html__( 'download it', 'boston' ) .'</a>' ); ?></p>
+                            <p><?php  printf( esc_html__( ' %1$s you will need to install and activate the FameThemes Demo Importer plugin first, %2$s now from Github.', 'boston' ) , '<b>Hey,</b>', '<a href="https://github.com/FameThemes/famethemes-demo-importer/archive/master.zip">'. esc_html__( 'download it', 'boston' ) .'</a>' ); ?></p>
                         </div>
                     <?php } ?>
                 </div>
@@ -132,7 +132,7 @@ if ( ! function_exists( 'boston_theme_info_page' ) ) {
                 <div class="col">
                     <div class="theme_info_boxed">
                         <p><strong><?php esc_html_e( 'Are you enjoying Boston theme?', 'boston' ); ?></strong></p>
-                        <p><?php _e('Rate our theme on <a target="_blank" href="https://wordpress.org/support/theme/boston/reviews/?filter=5#postform">WordPress.org</a>. We\'d really appreciate it!', 'boston'); ?></p>
+                        <p><?php printf( esc_html__('Rate our theme on %1s. We\'d really appreciate it!', 'boston'), '<a target="_blank" href="https://wordpress.org/support/theme/boston/reviews/?filter=5#postform">WordPress.org</a>' ); ?></p>
                         <p><span class="dashicons dashicons-star-filled"></span><span class="dashicons dashicons-star-filled"></span><span class="dashicons dashicons-star-filled"></span><span class="dashicons dashicons-star-filled"></span><span class="dashicons dashicons-star-filled"></span></p>
                     </div>
                 </div>
