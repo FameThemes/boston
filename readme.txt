@@ -1,11 +1,9 @@
 === Boston ===
 
 Contributors: famethemes
-Tags: one-column, two-columns, right-sidebar, custom-background, custom-menu, featured-images, sticky-post, translation-ready, threaded-comments, theme-options, blog, news
-
 Requires at least: 4.5
 Tested up to: 4.5
-Stable tag: 1.0.5
+Stable tag: 1.0.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -46,11 +44,18 @@ Boston includes support for Tiled Galleries in Jetpack.
 
 == Changelog ==
 
+= 1.0.9 =
+* Theme dashboard contribute tab.
+* Demo content text + tab.
+* Layout settings: Right & Left sidebar.
+* Full width page template.
+* RTL support.
+* Improve theme tags.
+* Update theme tags
+
 = 1.0.8 =
 * Improve responsive css codes.
 * Fix navigation issue on table.
-
-
 
 = 1.0.7 =
 * Add styling settings.

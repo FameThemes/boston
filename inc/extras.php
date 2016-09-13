@@ -24,6 +24,10 @@ function boston_body_classes( $classes ) {
 		$classes[] = 'hfeed';
 	}
 
+    $layout = get_theme_mod( 'layout', 'right' );
+
+    $classes[] = $layout.'-layout';
+
 	return $classes;
 }
 add_filter( 'body_class', 'boston_body_classes' );

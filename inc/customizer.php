@@ -35,23 +35,53 @@ function boston_customize_register( $wp_customize ) {
             'title'       => esc_html__( 'Styling', 'boston' ),
             'description' => '',
             'panel'       => 'theme_options',
-            'piority'     => 5
+            'priority'     => 5
         )
     );
 
-        $wp_customize->add_setting( 'styling_color_primary', array(
-            'default'              => '#d65456',
-            'sanitize_callback'    => 'sanitize_hex_color_no_hash',
-            'sanitize_js_callback' => 'maybe_hash_hex_color',
+    $wp_customize->add_setting( 'styling_color_primary', array(
+        'default'              => '#d65456',
+        'sanitize_callback'    => 'sanitize_hex_color_no_hash',
+        'sanitize_js_callback' => 'maybe_hash_hex_color',
+    ) );
+
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'styling_color_primary',
+            array(
+                'label'      => esc_html__( 'Primary Color', 'boston' ),
+                'section'    => 'styling',
+            )
+        )
+    );
+
+    /**
+     * Theme Styling
+     */
+    $wp_customize->add_section( 'layout' ,
+        array(
+            'title'       => esc_html__( 'Layout', 'boston' ),
+            'description' => '',
+            'panel'       => 'theme_options',
+            'priority'     => 5
+        )
+    );
+
+        $wp_customize->add_setting( 'layout', array(
+            'default'              => 'right',
+            'sanitize_callback'    => 'sanitize_text_field',
         ) );
 
         $wp_customize->add_control(
-            new WP_Customize_Color_Control(
-                $wp_customize,
-                'styling_color_primary',
-                array(
-                    'label'      => esc_html__( 'Primary Color', 'boston' ),
-                    'section'    => 'styling',
+            'layout',
+            array(
+                'label'      => esc_html__( 'Site Layout', 'boston' ),
+                'section'    => 'layout',
+                'type'       => 'select',
+                'choices'    => array(
+                    'right' => esc_html__( 'Right sidebar', 'boston' ),
+                    'left' => esc_html__( 'Left sidebar', 'boston' ),
                 )
             )
         );
@@ -72,7 +102,7 @@ function boston_customize_register( $wp_customize ) {
             'panel'       => 'theme_options',
             'title'       => esc_html__( 'Featured Content', 'boston' ),
             'description' => esc_html__( 'Easily feature all posts with the "featured" tag or a tag of your choice.', 'boston' ),
-            'piority'     => 7
+            'priority'     => 15
         )
     );
 
@@ -157,7 +187,7 @@ function boston_customize_register( $wp_customize ) {
         array(
             'panel'       => 'theme_options',
             'title'       => esc_html__( 'Articles Listing Layout', 'boston' ),
-            'piority'     => 9
+            'priority'     => 20
         )
     );
 

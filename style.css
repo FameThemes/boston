@@ -3,12 +3,12 @@ Theme Name: Boston
 Theme URI: https://www.famethemes.com/themes/boston
 Author: FameThemes
 Author URI: https://www.famethemes.com
-Description: Boston is a minimal Wordpress Theme designed for blogger, it provides many features that blogger will love. Whether you are looking to share your own thoughts, write about your latest findings, Boston is designed to fulfill these and a lot more.
-Version: 1.0.8
+Description: Boston is a minimal Wordpress Theme designed for blogger, it provides many features that blogger will love. Whether you are looking to share your own thoughts, write about your latest findings, Boston is designed to fulfill these and a lot more. Get free support at https://www.famethemes.com/contact/ and check the demo at http://www.famethemes.com/preview/?theme=Boston
+Version: 1.0.9
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: boston
-Tags: one-column, two-columns, right-sidebar, custom-background, custom-menu, featured-images, sticky-post, translation-ready, threaded-comments, theme-options, blog, news
+Tags: one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-logo, custom-menu, featured-images, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, news
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -744,7 +744,7 @@ textarea {
 	}
 }
 
-.full-width .content-area {
+.full-width .content-area, .page-template-full-width-page .content-area {
 	width: 100%;
 	max-width: 100%;
 }
@@ -774,6 +774,18 @@ textarea {
 	.sidebar {
 		width: 25.96154%;
 		float: right;
+	}
+}
+
+@media (min-width: 768px) {
+	.left-layout .content-area {
+		float: right;
+	}
+}
+
+@media (min-width: 768px) {
+	.left-layout .sidebar {
+		float: left;
 	}
 }
 
@@ -924,8 +936,20 @@ textarea {
 	float: left;
 }
 
+@media (max-width: 767px) {
+	.site-footer .site-info {
+		float: none !important;
+	}
+}
+
 .site-footer .theme-info {
 	float: right;
+}
+
+@media (max-width: 767px) {
+	.site-footer .theme-info {
+		float: none !important;
+	}
 }
 
 /*--------------------------------------------------------------

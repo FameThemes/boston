@@ -13,7 +13,7 @@
     }
 }
 
-.full-width {
+.full-width, .page-template-full-width-page {
     .content-area {
         width: 100%;
         max-width: 100%;
@@ -38,6 +38,18 @@
     @include media-breakpoint-up(md) {
         width: percentage( 270px / 1040px );
         float: right;
+    }
+}
+.left-layout {
+    .content-area {
+        @include media-breakpoint-up(md) {
+            float: right;
+        }
+    }
+    .sidebar {
+        @include media-breakpoint-up(md) {
+            float: left;
+        }
     }
 }
 
@@ -158,8 +170,14 @@
     }
     .site-info {
         float: left;
+        @include media-breakpoint-down(sm) {
+            float: none !important;
+        }
     }
     .theme-info {
         float: right;
+        @include media-breakpoint-down(sm) {
+            float: none !important;
+        }
     }
 }
