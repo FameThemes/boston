@@ -20,6 +20,11 @@ if ( ! function_exists( 'boston_admin_scripts' ) ) {
     {
         if ($hook === 'appearance_page_boston') {
             wp_enqueue_style('boston-admin-css', get_template_directory_uri() . '/assets/css/admin.css');
+            // Add recommend plugin css
+            wp_enqueue_style( 'plugin-install' );
+            wp_enqueue_script( 'plugin-install' );
+            wp_enqueue_script( 'updates' );
+            add_thickbox();
         }
     }
 }
@@ -101,8 +106,59 @@ if ( ! function_exists( 'boston_theme_info_page' ) ) {
                     <?php if ( has_action( 'boston_demo_import_content_tab' ) ) {
                         do_action( 'boston_demo_import_content_tab' );
                     } else { ?>
-                        <div class="demo-import-boxed">
-                            <p><?php  printf( esc_html__( ' %1$s you will need to install and activate the FameThemes Demo Importer plugin first, %2$s now from Github.', 'boston' ) , '<b>Hey,</b>', '<a href="https://github.com/FameThemes/famethemes-demo-importer/archive/master.zip">'. esc_html__( 'download it', 'boston' ) .'</a>' ); ?></p>
+                        <div id="plugin-filter" class="demo-import-boxed">
+                            <?php
+                            $plugin_name = 'famethemes-demo-importer';
+                            $status = is_dir( WP_PLUGIN_DIR . '/' . $plugin_name );
+                            $button_class = 'install-now button';
+                            $button_txt = esc_html__( 'Install Now', 'boston' );
+                            if ( ! $status ) {
+                                $install_url = wp_nonce_url(
+                                    add_query_arg(
+                                        array(
+                                            'action' => 'install-plugin',
+                                            'plugin' => $plugin_name
+                                        ),
+                                        network_admin_url( 'update.php' )
+                                    ),
+                                    'install-plugin_'.$plugin_name
+                                );
+
+                            } else {
+                                $install_url = add_query_arg(array(
+                                    'action' => 'activate',
+                                    'plugin' => rawurlencode( $plugin_name . '/' . $plugin_name . '.php' ),
+                                    'plugin_status' => 'all',
+                                    'paged' => '1',
+                                    '_wpnonce' => wp_create_nonce('activate-plugin_' . $plugin_name . '/' . $plugin_name . '.php'),
+                                ), network_admin_url('plugins.php'));
+                                $button_class = 'activate-now button-primary';
+                                $button_txt = esc_html__( 'Active Now', 'boston' );
+                            }
+
+                            $detail_link = add_query_arg(
+                                array(
+                                    'tab' => 'plugin-information',
+                                    'plugin' => $plugin_name,
+                                    'TB_iframe' => 'true',
+                                    'width' => '772',
+                                    'height' => '349',
+
+                                ),
+                                network_admin_url( 'plugin-install.php' )
+                            );
+
+                            echo '<p>';
+                            printf( esc_html__(
+                                '%1$s you will need to install and activate the %2$s plugin first.', 'boston' ),
+                                '<b>'.esc_html__( 'Hey.', 'boston' ).'</b>',
+                                '<a class="thickbox open-plugin-details-modal" href="'.esc_url( $detail_link ).'">'.esc_html__( 'FameThemes Demo Importer', 'boston' ).'</a>'
+                            );
+                            echo '</p>';
+
+                            echo '<p class="plugin-card-'.esc_attr( $plugin_name ).'"><a href="'.esc_url( $install_url ).'" data-slug="'.esc_attr( $plugin_name ).'" class="'.esc_attr( $button_class ).'">'.$button_txt.'</a></p>';
+
+                            ?>
                         </div>
                     <?php } ?>
                 </div>
@@ -140,6 +196,11 @@ if ( ! function_exists( 'boston_theme_info_page' ) ) {
         <?php } ?>
 
         </div> <!-- END .theme_info -->
+        <script type="text/javascript">
+            jQuery(  document).ready( function( $ ){
+                $( 'body').addClass( 'about-php' );
+            } );
+        </script>
         <?php
     }
 }
