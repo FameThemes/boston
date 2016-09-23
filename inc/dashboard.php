@@ -150,7 +150,7 @@ if ( ! function_exists( 'boston_theme_info_page' ) ) {
 
                             echo '<p>';
                             printf( esc_html__(
-                                'Hey. you will need to install and activate the %1$s plugin first.', 'boston' ),
+                                'Hey, you will need to install and activate the %1$s plugin first.', 'boston' ),
                                 '<a class="thickbox open-plugin-details-modal" href="'.esc_url( $detail_link ).'">'.esc_html__( 'FameThemes Demo Importer', 'boston' ).'</a>'
                             );
                             echo '</p>';
