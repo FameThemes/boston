@@ -236,6 +236,7 @@ function boston_customize_register( $wp_customize ) {
         array(
             'title'       => esc_html__( 'Upgrade to Boston Pro', 'boston' ),
             'description' => '',
+            'priority'     => 399
         )
     );
 

@@ -147,7 +147,7 @@
 
 // Call owl carousel for featured content.
 jQuery( document ).ready( function( $ ){
-    
+
     var carousel = $( '.featured_posts' );
     if ( carousel.length ) {
         carousel.imagesLoaded(function () {
