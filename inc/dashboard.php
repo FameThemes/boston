@@ -47,8 +47,7 @@ if ( ! function_exists( 'boston_theme_info_page' ) ) {
         <div class="wrap about-wrap theme_info_wrapper">
             <h1><?php printf(esc_html__('Welcome to %1s - Version %2s', 'boston'), $theme_data->Name, $theme_data->Version); ?></h1>
 
-            <div
-                class="about-text"><?php esc_html_e('Whether you’re looking to share your own thoughts, write about your latest findings, Boston WordPress theme is designed to fulfill these and a lot more.', 'boston') ?></div>
+            <div class="about-text"><?php esc_html_e("Whether you're looking to share your own thoughts, write about your latest findings, Boston WordPress theme is designed to fulfill these and a lot more.", 'boston') ?></div>
             <a target="_blank" href="<?php echo esc_url('http://www.famethemes.com/?utm_source=theme_dashboard_page&utm_medium=badge_link&utm_campaign=theme_admin'); ?>"
                class="famethemes-badge wp-badge"><span><?php echo esc_html('FameThemes', 'boston'); ?></span></a>
 

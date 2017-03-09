@@ -4,7 +4,7 @@ Theme URI: https://www.famethemes.com/themes/boston
 Author: FameThemes
 Author URI: https://www.famethemes.com
 Description: Boston is a minimal Wordpress Theme designed for blogger, it provides many features that blogger will love. Whether you are looking to share your own thoughts, write about your latest findings, Boston is designed to fulfill these and a lot more. Get free support at https://www.famethemes.com/contact/ and check the demo at http://www.famethemes.com/preview/?theme=Boston
-Version: 1.1.0
+Version: 1.1.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: boston
@@ -831,7 +831,7 @@ textarea {
 /* Site Branding */
 .site-branding {
 	padding: 50px 0px;
-	padding:  3.125rem 0rem;
+	padding:  3.125rem 0px;
 	text-align: center;
 	position: relative;
 	z-index: 1;
@@ -885,7 +885,7 @@ textarea {
 /* Site Content */
 .site-content {
 	padding: 50px 0px 80px;
-	padding:  3.125rem 0rem 5rem;
+	padding:  3.125rem 0px 5rem;
 	border-top: 1px solid #f1f1f1;
 }
 
@@ -895,7 +895,7 @@ textarea {
 
 .archive-header {
 	padding: 25px 0px;
-	padding:  1.5625rem 0rem;
+	padding:  1.5625rem 0px;
 	border-top: 1px solid #f1f1f1;
 }
 
@@ -922,7 +922,7 @@ textarea {
 /* Site Footer */
 .site-footer {
 	padding: 22px 0px;
-	padding:  1.375rem 0rem;
+	padding:  1.375rem 0px;
 	border-top: 1px solid #f1f1f1;
 	font-size: 12px;
 	color: #777777;
@@ -1457,7 +1457,7 @@ a.entry-category {
 
 .comments-area .comment-list article, .comments-area .comment-list .pingback, .comments-area .comment-list .trackback {
 	padding: 20px 0px;
-	padding:  1.25rem 0rem;
+	padding:  1.25rem 0px;
 	border-bottom: 1px solid #f1f1f1;
 }
 
