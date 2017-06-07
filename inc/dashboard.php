@@ -74,7 +74,7 @@ if ( ! function_exists( 'boston_theme_info_page' ) ) {
 
                             <p>
                                 <a class="button button-secondary" target="_blank" href="https://www.famethemes.com/contact"><?php esc_html_e( 'Create a support ticket', 'boston' ) ?></a>&nbsp;
-                                <a href="http://docs.famethemes.com/category/83-boston" target="_blank" class="button button-secondary"><?php esc_html_e('Boston Documentation', 'boston'); ?></a>
+                                <a href="http://docs.famethemes.com/category/114-boston" target="_blank" class="button button-secondary"><?php esc_html_e('Boston Documentation', 'boston'); ?></a>
                             </p>
                         </div>
                         <div class="theme_link">
