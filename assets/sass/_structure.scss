@@ -63,6 +63,11 @@
     #site-navigation {
         float: left;
     }
+    .container {
+        @include media-breakpoint-down(md) {
+            background: #fff;
+        }
+    }
     .topbar-search {
         line-height: 52px;
         border-right: 1px solid #F1F1F1;

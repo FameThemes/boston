@@ -1077,6 +1077,12 @@ textarea {
 	float: left;
 }
 
+@media (max-width: 991px) {
+	.site-topbar .container {
+		background: #fff;
+	}
+}
+
 .site-topbar .topbar-search {
 	line-height: 52px;
 	border-right: 1px solid #F1F1F1;
@@ -1107,7 +1113,7 @@ textarea {
 /* Site Branding */
 .site-branding {
 	padding: 50px 0px;
-	padding:  3.125rem 0px;
+	padding:  3.125rem 0rem;
 	text-align: center;
 	position: relative;
 	z-index: 1;
@@ -1161,7 +1167,7 @@ textarea {
 /* Site Content */
 .site-content {
 	padding: 50px 0px 80px;
-	padding:  3.125rem 0px 5rem;
+	padding:  3.125rem 0rem 5rem;
 	border-top: 1px solid #f1f1f1;
 }
 
@@ -1171,7 +1177,7 @@ textarea {
 
 .archive-header {
 	padding: 25px 0px;
-	padding:  1.5625rem 0px;
+	padding:  1.5625rem 0rem;
 	border-top: 1px solid #f1f1f1;
 }
 
@@ -1198,7 +1204,7 @@ textarea {
 /* Site Footer */
 .site-footer {
 	padding: 22px 0px;
-	padding:  1.375rem 0px;
+	padding:  1.375rem 0rem;
 	border-top: 1px solid #f1f1f1;
 	font-size: 12px;
 	color: #777777;
@@ -1769,7 +1775,7 @@ a.entry-category {
 
 .comments-area .comment-list article, .comments-area .comment-list .pingback, .comments-area .comment-list .trackback {
 	padding: 20px 0px;
-	padding:  1.25rem 0px;
+	padding:  1.25rem 0rem;
 	border-bottom: 1px solid #f1f1f1;
 }
 
