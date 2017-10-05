@@ -202,4 +202,7 @@ require get_template_directory() . '/inc/jetpack.php';
  */
 require get_template_directory() . '/inc/dashboard.php';
 
-// Testing gitgutter
+/**
+ * Load plugins recommended.
+ */
+require get_template_directory() . '/inc/plugins-recommend.php';
