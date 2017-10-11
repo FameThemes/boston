@@ -63,6 +63,11 @@
     #site-navigation {
         float: left;
     }
+    .container {
+        @include media-breakpoint-down(md) {
+            background: #fff;
+        }
+    }
     .topbar-search {
         line-height: 52px;
         border-right: 1px solid #F1F1F1;
@@ -178,6 +183,42 @@
         float: right;
         @include media-breakpoint-down(sm) {
             float: none !important;
+        }
+    }
+}
+
+
+.site-featured-content {
+    position: relative;
+    .spinner {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate( -50%, -50% );
+        display: none;
+    }
+    background: #fff;
+    &.loading {
+        .spinner {
+            display: block;
+        }
+        .featured_posts {
+            height: 250px;
+            display: block;
+            article {
+                display: none;
+            }
+        }
+        .featured_posts_slider {
+            article {
+                display: none;
+                opacity: 0;
+                &:first-child {
+                    display: block;
+                    opacity: 0;
+                }
+            }
+
         }
     }
 }

@@ -146,12 +146,30 @@
 } )();
 
 // Call owl carousel for featured content.
-jQuery( document ).ready( function(){
-	jQuery('.featured_posts').owlCarousel( {
-		autoPlay: 5000,
-		items : 3,
-		itemsDesktop: 2,
-		itemsDesktopSmall: [979,2],
-		paginationNumbers: false,
-	} )
+jQuery( document ).ready( function( $ ){
+
+    var carousel = $( '.featured_posts' );
+    if ( carousel.length ) {
+        carousel.imagesLoaded(function () {
+            var wrapper = carousel.parent();
+            wrapper.append(Boston.loading_icon);
+
+            setTimeout(function () {
+                wrapper.removeClass('loading');
+
+                carousel.owlCarousel( {
+                    autoPlay: 5000,
+                    items : 3,
+                    itemsDesktop: 2,
+                    itemsDesktopSmall: [979,2],
+                    paginationNumbers: false,
+                } );
+
+
+            }, 500);
+
+        });
+    }
+
+
 } );

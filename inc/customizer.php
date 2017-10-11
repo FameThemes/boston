@@ -236,6 +236,7 @@ function boston_customize_register( $wp_customize ) {
         array(
             'title'       => esc_html__( 'Upgrade to Boston Pro', 'boston' ),
             'description' => '',
+            'priority'     => 399
         )
     );
 
@@ -271,7 +272,7 @@ add_action( 'customize_register', 'boston_customize_register' );
 
 function boston_upgrade_pro_notice( $validity, $value ){
     if ( $value == 'slider' ) {
-        $validity->add( 'notice', esc_html__( 'Upgrade to Boston Pro to display featured content as a slider.', 'boston' ) );
+        $validity->add( 'notice', sprintf( esc_html__( 'Upgrade to %1s to display featured content as a slider.', 'boston' ), '<a target="_blank" href="https://www.famethemes.com/themes/boston-pro/">Boston Pro</a>' ) );
     }
     return $validity;
 }

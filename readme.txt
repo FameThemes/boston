@@ -2,8 +2,8 @@
 
 Contributors: famethemes
 Requires at least: 4.5
-Tested up to: 4.5
-Stable tag: 1.0.9
+Tested up to: 4.8
+Stable tag: 1.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -43,6 +43,14 @@ Boston includes support for Tiled Galleries in Jetpack.
 * Image use in screenshot: https://www.pexels.com/photo/man-suit-flowers-petals-94289/. [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
 
 == Changelog ==
+= 1.1.2 =
+* Improve demo importer.
+* Add free vs pro compare tab.
+
+= 1.1.1 =
+* Update recommend plugin.
+* Update translate text.
+* Fixed search form action in header.
 
 = 1.1.0 =
 * Fix translate text though printf().

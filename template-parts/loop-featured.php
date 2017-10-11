@@ -5,7 +5,7 @@
  */
 
 ?>
-<div class="site-featured-content">
+<div class="site-featured-content loading">
     <?php
     $featured_posts = boston_get_featured_posts();
 
