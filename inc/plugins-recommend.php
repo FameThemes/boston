@@ -61,7 +61,7 @@ function boston_register_required_plugins() {
 
 		// This is an example of how to include a plugin from the WordPress Plugin Repository.
 		array(
-			'name'      => 'EasyMega',
+			'name'      => 'Mega Menu plugin for WordPress',
 			'slug'      => 'easymega',
 			'required'  => false,
 		),

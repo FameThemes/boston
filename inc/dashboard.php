@@ -48,13 +48,13 @@ if ( ! function_exists( 'boston_theme_info_page' ) ) {
             <h1><?php printf(esc_html__('Welcome to %1s - Version %2s', 'boston'), $theme_data->Name, $theme_data->Version); ?></h1>
 
             <div class="about-text"><?php esc_html_e("Whether you're looking to share your own thoughts, write about your latest findings, Boston WordPress theme is designed to fulfill these and a lot more.", 'boston') ?></div>
-            <a target="_blank" href="<?php echo esc_url('http://www.famethemes.com/?utm_source=theme_dashboard_page&utm_medium=badge_link&utm_campaign=theme_admin'); ?>"
+            <a target="_blank" href="<?php echo esc_url('https://www.famethemes.com/?utm_source=theme_dashboard_page&utm_medium=badge_link&utm_campaign=theme_admin'); ?>"
                class="famethemes-badge wp-badge"><span><?php echo esc_html('FameThemes', 'boston'); ?></span></a>
 
             <h2 class="nav-tab-wrapper">
                 <a href="<?php echo esc_url( add_query_arg( array( 'page'=>'boston' ), admin_url( 'themes.php' ) ) ); ?>" class="nav-tab <?php echo ( ! $tab || $tab == 'boston' ) ? ' nav-tab-active' : ''; ?>"><?php echo esc_html($theme_data->Name); ?></a>
                 <a href="<?php echo esc_url( add_query_arg( array( 'page'=>'boston', 'tab' => 'demo-data-importer' ), admin_url( 'themes.php' ) ) ); ?>" class="nav-tab<?php echo $tab == 'demo-data-importer' ? ' nav-tab-active' : null; ?>"><?php esc_html_e( 'One Click Demo Import', 'boston' ); ?></span></a>
-
+                <a href="<?php echo esc_url( add_query_arg( array( 'page'=>'boston', 'tab' => 'free_pro' ), admin_url( 'themes.php' ) ) ); ?>" class="nav-tab<?php echo $tab == 'free_pro' ? ' nav-tab-active' : null; ?>"><?php esc_html_e( 'Free vs PRO', 'boston' ); ?></span></a>
                 <a href="<?php echo esc_url( add_query_arg( array( 'page'=>'boston', 'tab' => 'contribute' ), admin_url( 'themes.php' ) ) ); ?>" class="nav-tab<?php echo $tab == 'contribute' ? ' nav-tab-active' : null; ?>"><?php esc_html_e( 'Contribute', 'boston' ); ?><span class="dashicons dashicons-thumbs-up"></span></a>
             </h2>
 
@@ -192,6 +192,122 @@ if ( ! function_exists( 'boston_theme_info_page' ) ) {
                 </div>
             </div>
         <?php } ?>
+
+	        <?php if ( $tab == 'free_pro' ) { ?>
+                <div id="free_pro" class="freepro-tab-content info-tab-content">
+                    <table class="free-pro-table">
+                        <thead><tr><th></th><th>Boston</th><th>Boston Pro</th></tr></thead>
+                        <tbody>
+                        <tr>
+                            <td>
+                                <h4>Responsive Design</h4>
+                            </td>
+                            <td class="only-lite"><span class="dashicons-before dashicons-yes"></span></td>
+                            <td class="only-lite"><span class="dashicons-before dashicons-yes"></span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h4>Translation Ready</h4>
+                            </td>
+                            <td class="only-lite"><span class="dashicons-before dashicons-yes"></span></td>
+                            <td class="only-lite"><span class="dashicons-before dashicons-yes"></span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h4>Upload Your Own Logo</h4>
+                            </td>
+                            <td class="only-lite"><span class="dashicons-before dashicons-yes"></span></td>
+                            <td class="only-lite"><span class="dashicons-before dashicons-yes"></span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h4>Featured Content</h4>
+                            </td>
+                            <td class="only-lite"><span class="dashicons-before dashicons-yes"></span></td>
+                            <td class="only-lite"><span class="dashicons-before dashicons-yes"></span></td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <h4>Sidebar Layout</h4>
+                            </td>
+                            <td class="only-lite"><span class="dashicons-before dashicons-yes"></span></td>
+                            <td class="only-lite"><span class="dashicons-before dashicons-yes"></span></td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <h4>Featured Content Slider</h4>
+                            </td>
+                            <td class="only-pro"><span class="dashicons-before dashicons-no-alt"></span></td>
+                            <td class="only-lite"><span class="dashicons-before dashicons-yes"></span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h4>4 Article Listing Layout</h4>
+                            </td>
+                            <td class="only-pro"><span class="dashicons-before dashicons-no-alt"></span></td>
+                            <td class="only-lite"><span class="dashicons-before dashicons-yes"></span></td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <h4>600+ Google fonts</h4>
+                            </td>
+                            <td class="only-pro"><span class="dashicons-before dashicons-no-alt"></span></td>
+                            <td class="only-lite"><span class="dashicons-before dashicons-yes"></span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h4>600+ Google fonts</h4>
+                            </td>
+                            <td class="only-pro"><span class="dashicons-before dashicons-no-alt"></span></td>
+                            <td class="only-lite"><span class="dashicons-before dashicons-yes"></span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h4>Social Media Icons</h4>
+                            </td>
+                            <td class="only-pro"><span class="dashicons-before dashicons-no-alt"></span></td>
+                            <td class="only-lite"><span class="dashicons-before dashicons-yes"></span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h4>Instagram Feed Widget</h4>
+                            </td>
+                            <td class="only-pro"><span class="dashicons-before dashicons-no-alt"></span></td>
+                            <td class="only-lite"><span class="dashicons-before dashicons-yes"></span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h4>Footer Widget Area</h4>
+                            </td>
+                            <td class="only-pro"><span class="dashicons-before dashicons-no-alt"></span></td>
+                            <td class="only-lite"><span class="dashicons-before dashicons-yes"></span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h4>Footer Copyright Editor</h4>
+                            </td>
+                            <td class="only-pro"><span class="dashicons-before dashicons-no-alt"></span></td>
+                            <td class="only-lite"><span class="dashicons-before dashicons-yes"></span></td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <h4>24/7 Priority Support</h4>
+                            </td>
+                            <td class="only-pro"><span class="dashicons-before dashicons-no-alt"></span></td>
+                            <td class="only-lite"><span class="dashicons-before dashicons-yes"></span></td>
+                        </tr>
+
+
+                        <tr class="ti-about-page-text-center"><td></td><td colspan="2"><a href="https://www.famethemes.com/themes/boston-pro/?utm_source=theme_dashboard&utm_medium=compare_table&utm_campaign=boston" target="_blank" class="button button-primary button-hero">Get Boston Pro now!</a></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+	        <?php } ?>
+
 
         </div> <!-- END .theme_info -->
         <script type="text/javascript">
