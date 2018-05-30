@@ -1755,13 +1755,12 @@ a.entry-category {
   background: #444444;
 }
 
-.comment-form label {
-  width: 64px;
-  display: inline-block;
-}
-
-.comment-form-comment label {
+.comment-form p:not(.comment-form-cookies-consent) label {
+  display: block;
   margin-bottom: 5px;
+}
+.comment-form input[type="checkbox"] {
+  margin-right: 5px;
 }
 
 .comment-content a {

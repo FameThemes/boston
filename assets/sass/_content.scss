@@ -286,16 +286,15 @@ a.entry-category {
 }
 
 .comment-form {
-	label {
-		width: 64px;
-		display: inline-block;
-	}
-}
-
-.comment-form-comment {
-	label {
-		margin-bottom: 5px;
-	}
+    p:not(.comment-form-cookies-consent)   {
+        label {
+          display: block;
+          margin-bottom: 5px;
+        }
+    }
+    input[type="checkbox"] {
+        margin-right: 5px;
+    }
 }
 
 .comment-content a {
