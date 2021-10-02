@@ -94,7 +94,10 @@ if ( ! function_exists( 'boston_theme_info_page' ) ) {
                     </div>
 
                     <div class="theme_info_right">
-                        <img src="<?php echo get_template_directory_uri(); ?>/screenshot.png" alt="<?php esc_attr_e('Theme Screenshot', 'boston'); ?>"/>
+						<?php
+							$screenshot = get_template_directory_uri() . '/screenshot.png';
+						?>
+                        <img src="<?php echo esc_url( $screenshot ); ?>" alt="<?php esc_attr_e('Theme Screenshot', 'boston'); ?>"/>
                     </div>
                 </div>
             </div>
